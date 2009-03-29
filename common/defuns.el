@@ -1,8 +1,52 @@
-;;; starter-kit-defuns.el --- Define some custom functions
+;;; Function definitions
 ;;
-;; Part of the Emacs Starter Kit
 
+;;
+;; Navigation
+;;
+
+(defun scroll-one-line-up (&optional arg)
+  "Scroll the selected window up (forward in the text) one line (or N lines)."
+  (interactive "p")
+  (scroll-up (or arg 1)))
+
+(defun scroll-one-line-down (&optional arg)
+  "Scroll the selected window down (backward in the text) one line (or N)."
+  (interactive "p")
+  (scroll-down (or arg 1)))
+
+;;
+;; Native copy and paste
+;;
+
+(defun copy-from-osx ()
+  (shell-command-to-string "pbpaste"))
+
+(defun paste-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+;;
+;; Remove camel case
+;;
+
+(defun un-camelcase-string (s &optional sep start)
+  "Convert CamelCase string S to lower case with word separator SEP.
+    Default for SEP is an underscore \"_\".
+    If third argument START is non-nil, convert words after that
+    index in STRING. Might be BROKEN!!"
+  (let ((case-fold-search nil))
+    (while (string-match "[A-Z]" s (or start 1))
+      (setq s (replace-match (concat (or sep "_")
+                                     (downcase (match-string 0 s)))
+                             t nil s)))
+    (downcase s)))
+
+;;
 ;; Network
+;;
 
 (require 'thingatpt)
 
@@ -23,7 +67,9 @@
   (browse-url (format "http://maps.yahoo.com/maps_result?mag=12&lat=%s&lon=%s"
                       lat lng)))
 
-;; Buffer-related
+;;
+;; Buffers
+;;
 
 (defun ido-goto-symbol ()
   "Update the imenu index and then use ido to select a symbol to navigate to."
@@ -80,7 +126,9 @@
     (when file
       (find-file file))))
 
+;;
 ;; Cosmetic
+;;
 
 (defun pretty-lambdas ()
   (font-lock-add-keywords
@@ -89,7 +137,9 @@
                                     ,(make-char 'greek-iso8859-7 107))
                     nil))))))
 
-;; Other
+;;
+;; Others
+;;
 
 (defun my-eval-and-replace ()
   "Replace the preceding sexp with its value."
@@ -114,7 +164,7 @@
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 (defun lorem ()
-  "Insert a lorem ipsum."
+  "Insert a paragraph of the Lorem Ipsum."
   (interactive)
   (insert "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
           "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"
@@ -133,5 +183,7 @@
       (funcall function))))
 
 
-(provide 'starter-kit-defuns)
-;;; starter-kit-defuns.el ends here
+(provide 'defuns)
+
+;;; defuns.el eof
+

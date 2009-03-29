@@ -1,16 +1,43 @@
-;;; starter-kit-misc.el --- Things that don't fit anywhere else
+;;; Things that just don't fit anywhere else
 ;;
-;; Part of the Emacs Starter Kit
+
+;; Auto-saved configurations
+
+(custom-set-variables
+ '(column-number-mode t)
+ '(erc-email-userid "justin")
+ '(erc-header-line-face-method nil)
+ '(erc-hide-prompt t)
+ '(erc-input-line-position -1)
+ '(erc-join-buffer (quote bury))
+ '(erc-kill-buffer-on-part t)
+ '(erc-kill-queries-on-quit t)
+ '(erc-kill-server-buffer-on-quit t)
+ '(erc-nick "cheapRoc")
+ '(erc-prompt ">")
+ '(erc-user-full-name "justinwr")
+ '(indent-tabs-mode nil)
+ '(menu-bar-mode t)
+ '(show-paren-mode t)
+ '(speedbar-vc-do-check nil)
+ '(standard-indent 2)
+ '(tab-always-indent (quote always)))
 
 (when window-system
   (mouse-wheel-mode t)
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (tool-bar-mode -1)
-  (blink-cursor-mode -1))
+  (blink-cursor-mode -1)
+  ;; Custom font-face
+
+  (custom-set-faces
+   '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono"))))))
+
 
 ;; Sometimes backspace gets messed up in terminals; try to fix it.
-(when (not window-system) (keyboard-translate ?\C-h ?\C-?))
+(when (not window-system)
+  (keyboard-translate ?\C-h ?\C-?))
 
 (setq visible-bell t
       font-lock-maximum-decoration t
@@ -103,5 +130,4 @@
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
 
-(provide 'starter-kit-misc)
-;;; starter-kit-misc.el ends here
+(provide 'misc)

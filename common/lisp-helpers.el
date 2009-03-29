@@ -1,9 +1,7 @@
-;;; starter-kit-lisp.el --- Some helpful Lisp code
+;;; Lisp Helpers
 ;;
-;; Part of the Emacs Starter Kit
 
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
-
 (add-hook 'emacs-lisp-mode-hook 'emacs-lisp-remove-elc-on-save)
 
 (defun emacs-lisp-remove-elc-on-save ()
@@ -30,5 +28,4 @@
    "Face used to dim parentheses."
    :group 'starter-kit-faces)
 
-(provide 'starter-kit-lisp)
-;; starter-kit-lisp.el ends here
+(provide 'lisp-helpers)
