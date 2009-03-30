@@ -4,6 +4,7 @@
 (column-number-mode)
 (prefer-coding-system 'utf-8)
 (server-start)
+(setq show-trailing-whitespace "t")
 
 ;;
 ;; Display time and battery life
