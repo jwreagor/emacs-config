@@ -17,7 +17,7 @@
 ;;
 ;; Major
 ;;
-(print load-path)
+
 (require 'erlang-start)
 (autoload 'erlang-mode "erlang.el" "" t)
 (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
@@ -25,7 +25,7 @@
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 
 (autoload 'markdown-mode "markdown-mode.el" "" t)
-(add-to-list 'auto-mode-alist '("\\.[md|markdown]\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.m[d|arkdown]\\'" . markdown-mode))
 
 (autoload 'haml-mode "haml-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
