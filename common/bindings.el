@@ -4,6 +4,8 @@
 ;;
 ;; Copy, Paste and Repeat
 ;;
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-t") 'tags-loop-continue)
 (global-set-key (kbd "C-u") 'copy-region-as-kill)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-v") 'uncomment-region)

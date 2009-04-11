@@ -23,6 +23,7 @@
 ;; w3m Web Browser
 ;;
 
+(setq w3m-command "/usr/local/bin/w3m")
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
 (require 'w3m-load)
 

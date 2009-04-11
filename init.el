@@ -60,3 +60,32 @@
     (load system-specific-config))
 
 ;;; init.el eof
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(erc-email-userid "justin")
+ '(erc-header-line-face-method nil)
+ '(erc-hide-prompt t)
+ '(erc-input-line-position -1)
+ '(erc-join-buffer (quote bury))
+ '(erc-kill-buffer-on-part t)
+ '(erc-kill-queries-on-quit t)
+ '(erc-kill-server-buffer-on-quit t)
+ '(erc-nick "cheapRoc")
+ '(erc-prompt ">")
+ '(erc-user-full-name "justinwr")
+ '(indent-tabs-mode nil)
+ '(menu-bar-mode t)
+ '(show-paren-mode t)
+ '(speedbar-vc-do-check nil)
+ '(standard-indent 2)
+ '(tab-always-indent (quote always)))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 120 :width normal :foundry "apple" :family "Consolas")))))
