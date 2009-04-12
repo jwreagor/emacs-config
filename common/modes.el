@@ -42,14 +42,19 @@
 (add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;;
-;; xcode
+;; xcode (not working at the moment)
 ;;
 
 (autoload 'objc-mode "objc-mode" "" t)
 (autoload 'xcode-mode "xcode-mode" "" t)
 
-(add-to-list 'auto-mode-alist '("\\.[h|m]$" . objc-mode))
-(add-to-list 'auto-mode-alist '("\\.[h|m]$" . xcode-mode))
+(add-to-list
+ 'auto-mode-alist
+ '("^[A-Z]\w*[a-z]\w*[A-Z]\w*(?=\b)\.[h|m]$" . objc-mode))
+
+(add-to-list
+ 'auto-mode-alist
+ '("[A-Z]\w*[a-z]\w*[A-Z]\w*(?=\b)\.[h|m]$" . xcode-mode))
 
 (add-hook 'objc-mode-common-hook (require 'objc-c-mode))
 
