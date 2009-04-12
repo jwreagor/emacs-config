@@ -1,21 +1,18 @@
-;;; Mode setups
-;;
+;;; modes --- minor and major mode loading
 
 ;;
-;; Minor
+;; minor
 ;;
 
-(add-to-list 'load-path (concat vendor-dir "/yasnippet.el"))
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "/snippets"))
 
-(add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (require 'textmate)
 (textmate-mode)
 
 ;;
-;; Major
+;; major
 ;;
 
 (require 'erlang-start)
@@ -44,10 +41,39 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;;
+;; xcode
+;;
+
+(autoload 'objc-mode "objc-mode" "" t)
+(autoload 'xcode-mode "xcode-mode" "" t)
+
+(add-to-list 'auto-mode-alist '("\\.[h|m]$" . objc-mode))
+(add-to-list 'auto-mode-alist '("\\.[h|m]$" . xcode-mode))
+
+(add-hook 'objc-mode-common-hook (require 'objc-c-mode))
+
+(define-key objc-mode-map [(meta r)] 'xcode-compile)
+(define-key objc-mode-map [(meta K)] 'xcode-clean)
+
+(add-hook 'c-mode-common-hook
+          (lambda()
+            (local-set-key  [(meta O)] 'ff-find-other-file)))
+(add-hook 'c-mode-common-hook
+          (lambda()
+            (local-set-key (kbd "C-c <right>") 'hs-show-block)
+            (local-set-key (kbd "C-c <left>")  'hs-hide-block)
+            (local-set-key (kbd "C-c <up>")    'hs-hide-all)
+            (local-set-key (kbd "C-c <down>")  'hs-show-all)
+            (hs-minor-mode t)))         ; Hide and show blocks
+
+;;
+;; autoloads for elpa
+;;
+
 (autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
 (autoload 'magit-status "magit" "" t)
 
 (provide 'modes)
-
 ;;; modes.el eof

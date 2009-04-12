@@ -1,47 +1,40 @@
 ;;; justin.el --- very misc
 ;;
 
+(server-start)
 (column-number-mode)
 (prefer-coding-system 'utf-8)
-(server-start)
 (setq show-trailing-whitespace "t")
 
 ;;
-;; Display time and battery life
+;; display time and battery life
 ;;
 
 (display-time-mode)
 (display-battery-mode)
 
 ;;
-;; Major and Minor modes
+;; major and minor modes
 ;;
 
 (require 'modes)
 
 ;;
-;; w3m Web Browser
+;; w3m browser
 ;;
 
 (setq w3m-command "/usr/local/bin/w3m")
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
 (require 'w3m-load)
 
 ;;
-;; Color Theme
+;; color themes
 ;;
 
-(add-to-list 'load-path (concat vendor-dir "/color-theme"))
 (require 'color-theme)
 (color-theme-initialize)
 
 (when (window-system)
   (color-theme-charcoal-black))
-;; (color-theme-tango-2))
-;; (color-theme-github))
-;; (color-theme-vivid-chalk))
-;; (color-theme-twilight))
-;; (color-theme-gray30))
 
 ;;
 ;; Ruby mode within Erb templates
@@ -56,3 +49,4 @@
 ;; (require 'rails)
 
 (provide 'justin)
+;; justin.el eof
