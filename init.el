@@ -10,15 +10,13 @@
       user-specific-config (concat dotfiles-dir user-login-name ".el")
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
-      elpa-dir (concat dotfiles-dir "elpa")
-      elpa-lib-dir (concat dotfiles-dir "elpa-to-submit")
+      packages-dir (concat dotfiles-dir "packages")
       erlang-dir "/usr/local/lib/erlang")
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
-(add-to-list 'load-path elpa-dir)
-(add-to-list 'load-path elpa-lib-dir)
+(add-to-list 'load-path packages-dir)
 (add-to-list 'load-path (concat erlang-dir "/lib/tools-2.6.1/emacs"))
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
@@ -56,7 +54,7 @@
 ;;
 ;; System specific
 ;;
-      
+
 (if (file-exists-p system-specific-config)
     (load system-specific-config))
 
@@ -99,7 +97,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 120 :width normal :foundry "apple" :family "Consolas")))))
+ '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Consolas")))))
 
 ;;(toggle-debug-on-error)
 ;;(defun handle-shift-selection (&rest args))

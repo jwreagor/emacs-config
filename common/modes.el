@@ -4,6 +4,8 @@
 ;; minor
 ;;
 
+(require 'magit)
+
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "/snippets"))
@@ -78,7 +80,6 @@
 
 (autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
-(autoload 'magit-status "magit" "" t)
 
 (provide 'modes)
 ;;; modes.el eof
