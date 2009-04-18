@@ -1,4 +1,4 @@
-;;; Ruby Helpers
+;;; ruby development environment configuration
 ;;
 
 (autoload 'ruby-mode "ruby-mode" "" t)
@@ -30,4 +30,17 @@
              (delete-region (point-min) (point-max))))))
      (ad-activate 'ruby-do-run-w/compilation)))
 
+;;
+;; erb templates
+;;
+
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/find-recursive"))
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/rhtml/"))
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/emacs-rails/"))
+;; (require 'find-recursive)
+;; (require 'nxml-mode)
+;; (require 'rhtml-mode)
+;; (require 'rails)
+
 (provide 'ruby)
+;; ruby.el eof
