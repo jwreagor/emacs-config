@@ -43,6 +43,9 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
+(autoload 'cheat "cheat" "" t)
+(autoload 'lisppaste-paste-region "lisppaste" "" t)
+
 ;;
 ;; xcode (not working at the moment)
 ;;
@@ -73,13 +76,6 @@
             (local-set-key (kbd "C-c <up>")    'hs-hide-all)
             (local-set-key (kbd "C-c <down>")  'hs-show-all)
             (hs-minor-mode t)))         ; Hide and show blocks
-
-;;
-;; autoloads for elpa
-;;
-
-(autoload 'cheat "cheat" "" t)
-(autoload 'lisppaste-paste-region "lisppaste" "" t)
 
 (provide 'modes)
 ;;; modes.el eof
