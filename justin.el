@@ -5,6 +5,7 @@
 (column-number-mode)
 (prefer-coding-system 'utf-8)
 (setq show-trailing-whitespace "t")
+(setq ns-antialias-text "t")
 
 ;;
 ;; display time and battery life
@@ -33,20 +34,8 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system)
-  (color-theme-charcoal-black))
-
-;;
-;; Ruby mode within Erb templates
-;;
-
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/find-recursive"))
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/rhtml/"))
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/emacs-rails/"))
-;; (require 'find-recursive)
-;; (require 'nxml-mode)
-;; (require 'rhtml-mode)
-;; (require 'rails)
+(when (window-system) (color-theme-charcoal-black))
+;;(when (not (window-system))(color-theme-something))
 
 (provide 'justin)
 ;; justin.el eof

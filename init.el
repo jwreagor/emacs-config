@@ -2,7 +2,7 @@
 ;;
 
 ;;
-;; Load and System pathes
+;; load/system pathes
 ;;
 
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
@@ -25,14 +25,7 @@
 (add-to-list 'exec-path (concat erlang-dir "/bin"))
 
 ;;
-;; Package management (might remove again later)
-;;
-
-(require 'package)
-(package-initialize)
-
-;;
-;; Static loads
+;; static loads
 ;;
 
 (require 'cl)
@@ -50,23 +43,20 @@
 (require 'misc)
 (require 'registers)
 (require 'eshell-defaults)
+(require 'ruby-env)
 
 ;;
-;; System specific
+;; user/system specific
 ;;
 
 (if (file-exists-p system-specific-config)
     (load system-specific-config))
 
-;;
-;; User specific
-;;
-
 (if (file-exists-p user-specific-config)
     (load user-specific-config))
 
 ;;
-;; Custom settings
+;; customize settings
 ;;
 
 (custom-set-variables
@@ -75,6 +65,8 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(display-battery-mode t)
+ '(display-time-mode t)
  '(erc-email-userid "justin")
  '(erc-header-line-face-method nil)
  '(erc-hide-prompt t)
@@ -97,7 +89,21 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Consolas")))))
+ '(default ((t (:inherit nil
+                :stipple nil
+                :background "Grey15"
+                :foreground "Grey"
+                :inverse-video nil
+                :box nil
+                :strike-through nil
+                :overline nil
+                :underline nil
+                :slant normal
+                :weight normal
+                :height 110
+                :width normal
+                :foundry "apple"
+                :family "Consolas")))))
 
 ;;(toggle-debug-on-error)
 ;;(defun handle-shift-selection (&rest args))
