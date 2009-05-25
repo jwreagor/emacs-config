@@ -2,10 +2,8 @@
 ;;
 
 (server-start)
-(column-number-mode)
 (prefer-coding-system 'utf-8)
 (setq show-trailing-whitespace "t")
-(setq ns-antialias-text "t")
 
 ;;
 ;; display time and battery life
@@ -34,8 +32,8 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system) (color-theme-charcoal-black))
-;;(when (not (window-system))(color-theme-something))
+(when (window-system) (color-theme-blulight))
+;;(when (not (window-system)) (color-theme-something))
 
 (provide 'justin)
 ;; justin.el eof
