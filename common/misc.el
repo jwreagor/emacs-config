@@ -28,11 +28,11 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
   (tool-bar-mode -1)
-  (blink-cursor-mode -1)
+  (blink-cursor-mode -1))
   ;; Custom font-face
 
-  (custom-set-faces
-   '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono"))))))
+  ;; (custom-set-faces
+  ;;  '(default ((t (:inherit nil :stipple nil :background "Grey15" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono"))))))
 
 
 ;; Sometimes backspace gets messed up in terminals; try to fix it.

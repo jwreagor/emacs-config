@@ -19,14 +19,42 @@
 ;; Native copy and paste
 ;;
 
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
+(defvar osx-pbpaste-cmd "/usr/bin/pbpaste"
+  "*command-line paste program")
 
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+(defvar osx-pbcopy-cmd "/usr/bin/pbcopy"
+  "*command-line copy program")
+
+(defun paste-from-osx ()
+  "paste the contents of the os x clipboard into the buffer at point."
+  (interactive)
+  (call-process osx-pbpaste-cmd nil t t))
+
+(defun copy-to-osx ()
+  "copy the contents of the region into the os x clipboard."
+  (interactive)
+  (if (use-region-p)
+      (call-process-region
+       (region-beginning) (region-end) osx-pbcopy-cmd nil t t)
+    (error "region not selected")))
+
+(defun cut-to-osx ()
+  "cut the contents of the region; put in os x clipboard."
+  (interactive)
+  (if (use-region-p)
+      (call-process-region
+       (region-beginning) (region-end) osx-pbcopy-cmd t t t)
+    (error "region not selected")))
+
+(defun copy-line (&optional arg)
+  "Do a kill-line but copy rather than kill.  This function directly calls
+kill-line, so see documentation of kill-line for how to use it including prefix
+argument and relevant variables.  This function works by temporarily making the
+buffer read-only, so I suggest setting kill-read-only-ok to t."
+  (interactive "P")
+  (toggle-read-only 1)
+  (kill-line arg)
+  (toggle-read-only 0))
 
 ;;
 ;; Remove camel case
@@ -84,15 +112,15 @@
                              (cond
                               ((and (listp symbol) (imenu--subalist-p symbol))
                                (addsymbols symbol))
-                              
+
                               ((listp symbol)
                                (setq name (car symbol))
                                (setq position (cdr symbol)))
-                              
+
                               ((stringp symbol)
                                (setq name symbol)
                                (setq position (get-text-property 1 'org-imenu-marker symbol))))
-                             
+
                              (unless (or (null position) (null name))
                                (add-to-list 'symbol-names name)
                                (add-to-list 'name-and-pos (cons name position))))))))

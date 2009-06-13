@@ -6,6 +6,12 @@
 (setq show-trailing-whitespace "t")
 
 ;;
+;; copy line req.
+;;
+
+(setq-default kill-read-only-ok t)
+
+;;
 ;; display time and battery life
 ;;
 
@@ -32,7 +38,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system) (color-theme-blulight))
+(when (window-system) (color-theme-charcoal-black))
 ;;(when (not (window-system)) (color-theme-something))
 
 (provide 'justin)

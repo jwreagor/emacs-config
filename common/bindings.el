@@ -9,8 +9,11 @@
 (global-set-key (kbd "C-u") 'copy-region-as-kill)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "C-c C-v") 'uncomment-region)
-(global-set-key (kbd "M-C-u") 'paste-to-osx)
-(global-set-key (kbd "M-C-y") 'copy-from-osx)
+(global-set-key (kbd "C-c C-d") 'downcase-region)
+(global-set-key (kbd "C-c c-u") 'upcase-region)
+(global-set-key (kbd "M-C-u") 'copy-to-osx)
+(global-set-key (kbd "M-C-y") 'paste-from-osx)
+(global-set-key (kbd "C-M-k") 'copy-line)
 
 ;;
 ;; Misc
@@ -22,13 +25,14 @@
 ;; Function keys
 ;;
 (global-set-key [f1] 'menu-bar-mode) ;; menu bar hiding
-(global-set-key [f2] 'goto-line)
-(global-set-key [f12] 'elisp-index-search)
+(global-set-key [f2] 'goto-line) ;; obvious?
+(global-set-key [f3] 'customize-group) ;; search config of modes
+(global-set-key [f12] 'elisp-index-search) ;; search elisp reference
 
 ;;
 ;; Cleanup, Completion and Deletion
 ;;
-(global-set-key "\C-\M-h" 'backward-kill-word) ;; like readline
+(global-set-key (kbd "C-M-h") 'backward-kill-word) ;; like readline
 (global-set-key (kbd "C-x \\") 'align-regexp) ;; align by regexp
 (global-set-key (kbd "M-/") 'hippie-expand) ;; various keyword completion
 (global-set-key (kbd "C-c n") (lambda () (interactive)
@@ -39,10 +43,11 @@
 ;;
 ;; Searching
 ;;
-(global-set-key "\C-s" 'isearch-forward-regexp)
-(global-set-key "\C-r" 'isearch-backward-regexp)
-(global-set-key "\C-\M-s" 'isearch-forward)
-(global-set-key "\C-\M-r" 'isearch-backward)
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+;;(global-set-key "\C-r" 'isearch-backward-regexp)
+(global-set-key (kbd "C-r") 'replace-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
 
 ;;
 ;; Navigation

@@ -1,23 +1,15 @@
-;; DESCRIPTION: Mac-friendly key bindings in addition to those provided by Emacs.app
-;;              
-;; AUTHOR:      Geoffrey Grosenbach
-;;              http://peepcode.com
-;;
-;; DATE:        December 2008 and following
-;;
-;; NOTE super is the Apple/Command key on my keyboard,
-;;      but I have cmd/opt switched in System Preferences
-;;      so it may be different on your machine).
+;; bindings when in a mac environment
+;;;;
 
 ;; Switch window focus
-(global-set-key [(super meta right)] 'other-window)
-(global-set-key [(super meta left)] (lambda () (interactive) (other-window -1)))
-(global-set-key [(super meta up)] 'windmove-up)
+(global-set-key (kbd "M-}") 'other-window)
+(global-set-key (kbd "M-{") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "M-]") 'windmove-up)
 (global-set-key [(super meta down)] 'windmove-down)
 
 ;; Switch buffers in current window
-(global-set-key [(super control right)] 'next-buffer)
-(global-set-key [(super control left)] 'previous-buffer)
+(global-set-key (kbd "C-M-[") 'next-buffer)
+(global-set-key (kbd "C-M-]") 'previous-buffer)
 
 ;; Windows
 (global-set-key [f5] 'split-window-horizontally)
