@@ -64,6 +64,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode t)
  '(column-number-mode t)
  '(display-battery-mode t)
  '(display-time-mode t)
@@ -82,6 +83,7 @@
  '(eshell-scroll-to-bottom-on-input nil)
  '(eshell-term-name "xterm-color")
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
+ '(fringe-mode 0 nil (fringe))
  '(indent-tabs-mode nil)
  '(line-spacing 1)
  '(menu-bar-mode t)
@@ -92,6 +94,7 @@
  '(ns-function-modifier (quote none))
  '(ns-use-qd-smoothing nil)
  '(show-paren-mode t)
+ '(size-indication-mode t)
  '(speedbar-vc-do-check nil)
  '(standard-indent 2)
  '(tab-always-indent (quote always)))
@@ -113,7 +116,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 120 :width normal :foundry "apple" :family "Consolas")))))
 
 (put 'upcase-region 'disabled nil)
 
