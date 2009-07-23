@@ -20,6 +20,7 @@
 (add-to-list 'load-path (concat erlang-dir "/lib/tools-2.6.1/emacs"))
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
+(add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/yasnippet.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (add-to-list 'exec-path (concat erlang-dir "/bin"))
@@ -85,6 +86,11 @@
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
  '(fringe-mode 0 nil (fringe))
  '(indent-tabs-mode nil)
+ '(js2-auto-indent-flag t)
+ '(js2-bounce-indent-flag t)
+ '(js2-enter-indents-newline nil)
+ '(js2-missing-semi-one-line-override t)
+ '(js2-strict-missing-semi-warning nil)
  '(line-spacing 1)
  '(menu-bar-mode t)
  '(ns-alternate-modifier (quote meta))
@@ -116,7 +122,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 120 :width normal :foundry "apple" :family "Consolas")))))
+ '(default ((t (:stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream Vera Sans Mono")))))
 
 (put 'upcase-region 'disabled nil)
 

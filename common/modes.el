@@ -26,6 +26,9 @@
 (autoload 'markdown-mode "markdown-mode.el" "" t)
 (add-to-list 'auto-mode-alist '("\\.m[d|arkdown]\\'" . markdown-mode))
 
+(autoload 'feature-mode "feature-mode" "" t)
+(add-to-list 'auto-mode-alist '("\\.feature$" . feature-mode))
+
 (autoload 'haml-mode "haml-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 
