@@ -7,3 +7,6 @@
 [submodule "vendor/rspec-mode.el"]
 	path = vendor/rspec-mode.el
 	url = git://github.com/pat-maddox/rspec-mode.el.git
+[submodule "vendor/org-mode"]
+	path = vendor/org-mode
+	url = git://repo.or.cz/org-mode.git
