@@ -1,7 +1,7 @@
-;; init.el, mah emacs booting god of doom
+;;;; init.el, mah emacs booting god of doom
 ;;
 
-;;
+;;;;
 ;; load/system pathes
 ;;
 
@@ -25,7 +25,7 @@
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (add-to-list 'exec-path (concat erlang-dir "/bin"))
 
-;;
+;;;;
 ;; static loads
 ;;
 
@@ -46,7 +46,7 @@
 (require 'eshell-defaults)
 (require 'ruby-env)
 
-;;
+;;;;
 ;; user/system specific
 ;;
 
@@ -56,7 +56,7 @@
 (if (file-exists-p user-specific-config)
     (load user-specific-config))
 
-;;
+;;;;
 ;; customize settings
 ;;
 
@@ -104,15 +104,6 @@
  '(speedbar-vc-do-check nil)
  '(standard-indent 2)
  '(tab-always-indent (quote always)))
-;;(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-;; '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#F8F8F8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 120 :width normal :foundry "apple" :family "Consolas")))))
-
-;;(toggle-debug-on-error)
-;;(defun handle-shift-selection (&rest args))
 
 (provide 'init)
 ;;; init.el eof
