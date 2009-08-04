@@ -5,10 +5,22 @@
 
 (autoload 'ruby-mode "ruby-mode" "" t)
 (autoload 'inf-ruby "inf-ruby" "" t)
-(autoload 'run-ruby "inf-ruby" "" t)
 (autoload 'ruby-electric-mode "ruby-electric" "" t)
+(autoload 'ruby-compilation-minor-mode "ruby-compilation" "" t)
 
-(add-hook 'ruby-mode-hook 'ruby-electric-mode)
+(add-hook 'ruby-mode-hook
+          '(lambda ()
+             (ruby-electric-mode)
+             (require 'ruby-compilation)
+             (local-unset-key "\t")
+             (make-variable-buffer-local 'yas/trigger-key)
+             (setq yas/trigger-key [TAB])))
+
+;; (eval-after-load 'ruby-mode
+;;   '(lambda
+;;      (make-variable-buffer-local 'yas/trigger-key)
+;;      (setq yas/trigger-key [TAB])))
+
 
 ;; (eval-after-load 'ruby-mode
 ;;   '(progn
@@ -21,8 +33,8 @@
 
 (global-set-key (kbd "C-c h r") 'ri)
 
-;;
-;; never edit rubinius bytecode
+;;;;
+;; never edit compiled rubinius bytecode
 ;;
 
 (add-to-list 'completion-ignored-extensions ".rbc")

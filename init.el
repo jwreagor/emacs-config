@@ -103,7 +103,8 @@
  '(size-indication-mode t)
  '(speedbar-vc-do-check nil)
  '(standard-indent 2)
- '(tab-always-indent (quote always)))
+ '(tab-always-indent (quote always))
+ '(yas/prompt-functions (quote (yas/ido-prompt yas/completing-prompt yas/x-prompt yas/dropdown-prompt yas/no-prompt))))
 
 (provide 'init)
 ;;; init.el eof

@@ -5,33 +5,33 @@
 (prefer-coding-system 'utf-8)
 (setq show-trailing-whitespace "t")
 
-;;
+;;;;
 ;; copy line req.
 ;;
 
 (setq-default kill-read-only-ok t)
 
-;;
+;;;;
 ;; display time and battery life
 ;;
 
 (display-time-mode)
 (display-battery-mode)
 
-;;
+;;;;
 ;; major and minor modes
 ;;
 
 (require 'modes)
 
-;;
+;;;;
 ;; w3m browser
 ;;
 
 (setq w3m-command "/usr/local/bin/w3m")
 (require 'w3m-load)
 
-;;
+;;;;
 ;; color themes
 ;;
 

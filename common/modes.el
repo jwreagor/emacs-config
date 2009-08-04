@@ -1,6 +1,6 @@
 ;;; modes --- minor and major mode loading
 
-;;
+;;;;
 ;; minor
 ;;
 
@@ -8,7 +8,8 @@
 
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory (concat dotfiles-dir "/snippets"))
+(setq yas/root-directory (concat dotfiles-dir "/snippets"))
+(yas/load-directory yas/root-directory)
 
 (require 'textmate)
 (textmate-mode)
