@@ -2,7 +2,7 @@
 ;;
 
 ;;;;
-;; load/system pathes
+;; system locations
 ;;
 
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
@@ -11,7 +11,12 @@
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
       packages-dir (concat dotfiles-dir "packages")
-      erlang-dir "/usr/local/lib/erlang")
+      erlang-dir "/usr/local/lib/erlang"
+      local-bin "/usr/local/bin")
+
+;;;;
+;; build load-path
+;;
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path common-dir)
@@ -24,6 +29,12 @@
 (add-to-list 'load-path (concat vendor-dir "/yasnippet.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (add-to-list 'exec-path (concat erlang-dir "/bin"))
+
+;;;;
+;; build exec-path
+;;
+
+(setq exec-path (cons "/usr/local/bin" exec-path))
 
 ;;;;
 ;; static loads
