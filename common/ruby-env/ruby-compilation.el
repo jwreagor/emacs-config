@@ -63,7 +63,7 @@
   "a version of `compilation-error-regexp-alist' to be used in
   rails logs (should be used with `make-local-variable')")
 
-(defvar ruby-compilation-executable "ruby"
+(defvar ruby-compilation-executable "/usr/local/bin/ruby"
   "What bin to use to launch the tests. Override if you use JRuby etc.")
 
 (defvar ruby-compilation-test-name-flag "-n"
@@ -71,11 +71,10 @@
 
 (defun ruby-compilation-run (cmd)
   "Run a ruby process dumping output to a ruby compilation buffer."
-  (interactive "FRuby Comand: ")
+  (interactive "Ruby Command: ")
   (let ((name (file-name-nondirectory (car (split-string cmd))))
 	(cmdlist (cons ruby-compilation-executable
-                       ;; What on earth is ruby-args-to-list?
-                       (ruby-args-to-list (expand-file-name cmd)))))
+                       (split-string (expand-file-name cmd)))))
     (pop-to-buffer (ruby-compilation-do name cmdlist))))
 
 (defun ruby-compilation-rake (&optional edit task)
@@ -88,7 +87,7 @@
 		      task)))
     (pop-to-buffer (ruby-compilation-do
 		    "rake" (cons "rake"
-				 (ruby-args-to-list rake-args))))))
+				 (split-string rake-args))))))
 
 (defun ruby-compilation-this-buffer ()
   "Run the current buffer through Ruby compilation."
