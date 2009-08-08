@@ -60,9 +60,8 @@
 ;;
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
 (add-to-list 'load-path "~/.emacs.d/vendor/slime")
-(autoload 'slime-setup "slime" nil t)
-(add-hook 'emacs-lisp-mode-hook '(lambda ()
-                                   (slime-setup)))
+(require 'slime-autoloads)
+(slime-setup)
 
 (provide 'modes)
 ;;; modes.el eof
