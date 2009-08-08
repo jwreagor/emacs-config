@@ -101,6 +101,12 @@
 ;; formatting
 ;;
 
+(defun clean-up-buffer-source ()
+  (interactive)
+  (indent-buffer)
+  (delete-trailing-whitespace)
+  (untabify-buffer))
+
 (defun un-camelcase-string (s &optional sep start)
   "Convert CamelCase string S to lower case with word separator SEP.
     Default for SEP is an underscore \"_\".
@@ -108,9 +114,9 @@
     index in STRING. Might be BROKEN!!"
   (let ((case-fold-search nil))
     (while (string-match "[A-Z]" s (or start 1))
-      (setq s (replace-match (concat (or sep "_")
-                                     (downcase (match-string 0 s)))
-                             t nil s)))
+      (setq val (concat (or sep "_")
+                        (downcase (match-string 0 s))))
+      (setq s (replace-match val t nil s)))
     (downcase s)))
 
 ;;;;

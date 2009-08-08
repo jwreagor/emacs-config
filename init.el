@@ -24,6 +24,7 @@
 (add-to-list 'load-path packages-dir)
 (add-to-list 'load-path (concat erlang-dir "/lib/tools-2.6.1/emacs"))
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
+(add-to-list 'load-path (concat vendor-dir "/slime"))
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))

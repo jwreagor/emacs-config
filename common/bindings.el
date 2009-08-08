@@ -4,18 +4,19 @@
 ;;;;
 ;; copy, paste and repeat
 ;;
-
-(global-set-key (kbd "C-t")     'tags-loop-continue)
-(global-set-key (kbd "C-u")     'copy-region-as-kill)
-(global-set-key (kbd "C-c C-c") 'comment-region)
-(global-set-key (kbd "C-c C-v") 'uncomment-region)
-(global-set-key (kbd "C-c C-d") 'downcase-region)
-(global-set-key (kbd "C-c c-u") 'upcase-region)
-(global-set-key (kbd "M-C-u")   'copy-to-osx)
-(global-set-key (kbd "M-C-y")   'paste-from-osx)
-(global-set-key (kbd "C-k")     'nuke-line)
-(global-set-key (kbd "C-M-k")   'copy-line)
-(global-set-key (kbd "C-M-d")   'nuke-word)
+(global-set-key (kbd "C-t")           'tags-loop-continue)
+(global-set-key (kbd "C-u")           'copy-region-as-kill)
+(global-set-key (kbd "C-c C-c")       'comment-region)
+(global-set-key (kbd "C-c C-v")       'uncomment-region)
+(global-set-key (kbd "C-c C-d")       'downcase-region)
+(global-set-key (kbd "C-c c-u")       'upcase-region)
+(global-set-key (kbd "M-C-u")         'copy-to-osx)
+(global-set-key (kbd "M-C-y")         'paste-from-osx)
+(global-set-key (kbd "C-k")           'nuke-line)
+(global-set-key (kbd "C-M-k")         'copy-line)
+(global-set-key (kbd "C-M-d")         'nuke-word)
+(global-set-key (kbd "C-<backspace>") 'backward-nuke-word)
+(global-set-key (kbd "M-<backspace>") 'backward-nuke-word)
 
 ;;;;
 ;; misc
@@ -26,21 +27,19 @@
 ;;;;
 ;; function keys
 ;;
-(global-set-key [f1] 'info) ;; info-page, used to be menu-bar-mode
-(global-set-key [f2] 'goto-line) ;; obvious?
-(global-set-key [f3] 'customize-group) ;; search config of modes
-(global-set-key [f12] 'elisp-index-search) ;; search elisp reference
+(global-set-key [f1]  'info)
+(global-set-key [f2]  'goto-line)
+(global-set-key [f3]  'customize-group)
+(global-set-key [f4]  'emacs-index-search)
+(global-set-key [f5]  'elisp-index-search)
+(global-set-key [f12] 'menu-bar-mode)
 
 ;;;;
 ;; cleanup, completion and deletion
 ;;
-(global-set-key (kbd "C-M-h") 'backward-kill-word) ;; like readline
-(global-set-key (kbd "C-x \\") 'align-regexp) ;; align by regexp
-(global-set-key (kbd "M-/") 'hippie-expand) ;; various keyword completion
-(global-set-key (kbd "C-c n") (lambda () (interactive)
-                                (indent-buffer)
-                                (delete-trailing-whitespace)
-                                (untabify-buffer)))
+(global-set-key (kbd "C-x \\") 'align-regexp)
+(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-c n") 'clean-up-buffer-source)
 
 ;;;;
 ;; searching
@@ -60,7 +59,7 @@
 
 (windmove-default-keybindings) ;; Shift+direction window switching
 
-(global-set-key (kbd "C-xO") (lambda ()
+(global-set-key (kbd "C-x O") (lambda ()
                                (interactive)
                                (other-window -1)))
 
@@ -99,7 +98,7 @@
 ;; help
 ;;
 (global-set-key (kbd "C-h a") 'apropos)
-;;(global-set-key (kbd "C-h c") 'cheat)
+(global-set-key (kbd "C-h c") 'cheat)
 
 (provide 'bindings)
 ;;; bindings.el eof

@@ -1,4 +1,5 @@
-;;; modes --- minor and major mode loading
+;;;; modes --- minor and major mode loading
+;;
 
 ;;;;
 ;; minor
@@ -6,15 +7,10 @@
 
 (require 'magit)
 
-;; (require 'yasnippet)
-;; (setq yas/root-directory (concat dotfiles-dir "snippets"))
-;; (yas/load-directory yas/root-directory)
-;; (yas/global-mode)
-
 (require 'textmate)
 (textmate-mode)
 
-;;
+;;;;
 ;; major
 ;;
 
@@ -49,6 +45,24 @@
 
 (autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
+
+;;;;
+;; yasnippet
+;;
+
+;; (require 'yasnippet)
+;; (setq yas/root-directory (concat dotfiles-dir "snippets"))
+;; (yas/load-directory yas/root-directory)
+;; (yas/global-mode)
+
+;;;;
+;; slime
+;;
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(add-to-list 'load-path "~/.emacs.d/vendor/slime")
+(autoload 'slime-setup "slime" nil t)
+(add-hook 'emacs-lisp-mode-hook '(lambda ()
+                                   (slime-setup)))
 
 (provide 'modes)
 ;;; modes.el eof
