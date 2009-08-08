@@ -1,8 +1,8 @@
-;;; Function definitions
+;;; function defs
 ;;
 
-;;
-;; Navigation
+;;;;
+;; navigation
 ;;
 
 (defun scroll-one-line-up (&optional arg)
@@ -15,8 +15,8 @@
   (interactive "p")
   (scroll-down (or arg 1)))
 
-;;
-;; Native copy and paste
+;;;;
+;; native copy and paste
 ;;
 
 (defvar osx-pbpaste-cmd "/usr/bin/pbpaste"
@@ -48,16 +48,57 @@
 
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill.  This function directly calls
-kill-line, so see documentation of kill-line for how to use it including prefix
-argument and relevant variables.  This function works by temporarily making the
-buffer read-only, so I suggest setting kill-read-only-ok to t."
+    kill-line, so see documentation of kill-line for how to use it including prefix
+    argument and relevant variables.  This function works by temporarily making the
+    buffer read-only, so I suggest setting kill-read-only-ok to t."
   (interactive "P")
   (toggle-read-only 1)
   (kill-line arg)
   (toggle-read-only 0))
 
+;;;;
+;; nuking
 ;;
-;; Remove camel case
+
+(defun nuke-word (arg)
+  "Delete characters forward until encountering the end of a word.
+    With argument, do this that many times.
+    This command does not push erased text to kill-ring."
+  (interactive "p")
+  (delete-region
+   (point)
+   (progn
+     (forward-word arg)
+     (point))))
+
+(defun nuke-line ()
+  "Delete text from current position to end of line char."
+  (interactive)
+  (delete-region
+   (point)
+   (save-excursion
+     (move-end-of-line 1)
+     (point)))
+  (delete-char 1))
+
+(defun backward-nuke-word (arg)
+  "Delete characters backward until encountering the beginning of a word.
+    With argument, do this that many times.
+    This command does not push erased text to kill-ring."
+  (interactive "p")
+  (nuke-word (- arg)))
+
+(defun backward-nuke-line ()
+  "Delete text between the beginning of the line to the cursor position."
+  (interactive)
+  (let (x1 x2)
+    (setq x1 (point))
+    (move-beginning-of-line 1)
+    (setq x2 (point))
+    (delete-region x1 x2)))
+
+;;;;
+;; formatting
 ;;
 
 (defun un-camelcase-string (s &optional sep start)
@@ -72,8 +113,8 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
                              t nil s)))
     (downcase s)))
 
-;;
-;; Network
+;;;;
+;; network
 ;;
 
 (require 'thingatpt)

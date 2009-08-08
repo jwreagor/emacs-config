@@ -15,7 +15,7 @@
       local-bin "/usr/local/bin")
 
 ;;;;
-;; build load-path
+;; build load/exec-path
 ;;
 
 (add-to-list 'load-path dotfiles-dir)
@@ -26,7 +26,6 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
-(add-to-list 'load-path (concat vendor-dir "/yasnippet.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (add-to-list 'exec-path (concat erlang-dir "/bin"))
 
@@ -125,8 +124,10 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#F8F8F8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono")))))
 
 (put 'upcase-region 'disabled nil)
 
 (put 'downcase-region 'disabled nil)
+
+(put 'narrow-to-region 'disabled nil)

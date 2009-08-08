@@ -6,9 +6,10 @@
 
 (require 'magit)
 
-(require 'yasnippet)
-(setq yas/root-directory (concat dotfiles-dir "/snippets"))
-(yas/load-directory yas/root-directory)
+;; (require 'yasnippet)
+;; (setq yas/root-directory (concat dotfiles-dir "snippets"))
+;; (yas/load-directory yas/root-directory)
+;; (yas/global-mode)
 
 (require 'textmate)
 (textmate-mode)

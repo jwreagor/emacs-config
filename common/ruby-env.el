@@ -1,4 +1,4 @@
-;;; ruby development environment configuration
+;;; ruby environment
 ;;
 
 (add-to-list 'load-path (concat common-dir "/ruby-env"))
@@ -9,25 +9,27 @@
 ;;
 
 (autoload 'ruby-mode "ruby-mode" "" t)
+(autoload 'rspec-mode "rspec-mode" "" t)
 (autoload 'inf-ruby "inf-ruby" "" t)
 (autoload 'ruby-electric-mode "ruby-electric" "" t)
 (autoload 'ruby-compilation-minor-mode "ruby-compilation" "" t)
 (autoload 'rinari-minor-mode "rinari" "" t)
 
 ;;;;
-;; ruby-mode hooks
+;; ruby/rspec-mode hooks
 ;;
 
 (add-hook 'ruby-mode-hook
           '(lambda ()
-             (ruby-electric-mode)
-             (rinari-minor-mode)
-             (require 'ruby-compilation)
-             (local-unset-key "\t")
-             (make-variable-buffer-local 'yas/trigger-key)
-             (setq yas/trigger-key [TAB])
-             (local-set-key (kbd "C-c h r") 'ri)
-             (local-set-key (kbd "RET") 'reident-then-newline-and-indent)))
+            (require 'ruby-compilation)
+            (ruby-electric-mode t)
+            (inf-ruby-keys)
+            (rinari-minor-mode)
+            (local-set-key (kbd "C-c h r") 'ri)))
+
+(add-hook 'rspec-mode-hook
+          '(lambda ()
+             (setq yas/mode-symbol 'rspec-mode))) 
 
 ;;;;
 ;; never edit compiled rubinius bytecode
@@ -36,4 +38,4 @@
 (add-to-list 'completion-ignored-extensions ".rbc")
 
 (provide 'ruby-env)
-;; ruby.el eof
+;; ruby-env.el eof
