@@ -56,6 +56,7 @@
 (require 'registers)
 (require 'eshell-defaults)
 (require 'ruby-env)
+(require 'lisp-env)
 
 ;;;;
 ;; user/system specific
