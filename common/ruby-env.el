@@ -25,6 +25,7 @@
             (ruby-electric-mode t)
             (inf-ruby-keys)
             (rinari-minor-mode)
+            (setq rinari-tags-file-name ".TAGS")
             (local-set-key (kbd "C-c h r") 'ri)))
 
 (add-hook 'rspec-mode-hook

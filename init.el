@@ -57,6 +57,7 @@
 (require 'eshell-defaults)
 (require 'ruby-env)
 (require 'lisp-env)
+(require 'org-env)
 
 ;;;;
 ;; user/system specific
@@ -98,7 +99,7 @@
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
  '(fringe-mode 0 nil (fringe))
  '(indent-tabs-mode nil)
- '(js2-auto-indent-flag t)
+ '(js2-auto-indent-flag nil)
  '(js2-bounce-indent-flag t)
  '(js2-enter-indents-newline nil)
  '(js2-missing-semi-one-line-override t)

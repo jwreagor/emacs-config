@@ -38,8 +38,11 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system) (color-theme-tango-2))
-;;(when (not (window-system)) (color-theme-something))
+(when (window-system)
+  (color-theme-twilight))
+
+;;(when (not (window-system))
+;;  (color-theme-something))
 
 (provide 'justin)
 ;; justin.el eof

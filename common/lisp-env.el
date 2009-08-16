@@ -31,9 +31,9 @@
      (setq slime-complete-symbol*-fancy t)
      (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)
      (add-hook 'lisp-mode-hook (lambda ()
-                                 (require 'slime)
                                  (slime-mode t)))))
 
+(require 'slime)
 (require 'lisp-helpers)
 
 (provide 'lisp-env)
