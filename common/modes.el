@@ -39,6 +39,8 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.j$" . objc-mode))
 
+(autoload 'espresso-mode "espresso")
+
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)

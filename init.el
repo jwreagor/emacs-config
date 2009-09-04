@@ -58,6 +58,7 @@
 (require 'ruby-env)
 (require 'lisp-env)
 (require 'org-env)
+(require 'js-env)
 
 ;;;;
 ;; user/system specific
@@ -99,9 +100,6 @@
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
  '(fringe-mode 0 nil (fringe))
  '(indent-tabs-mode nil)
- '(js2-auto-indent-flag nil)
- '(js2-bounce-indent-flag t)
- '(js2-enter-indents-newline nil)
  '(js2-missing-semi-one-line-override t)
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 1)
@@ -127,7 +125,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#F8F8F8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono")))))
 
 (put 'upcase-region 'disabled nil)
 
