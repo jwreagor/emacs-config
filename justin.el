@@ -25,13 +25,6 @@
 (require 'modes)
 
 ;;;;
-;; w3m browser
-;;
-
-(setq w3m-command "/usr/local/bin/w3m")
-(require 'w3m-load)
-
-;;;;
 ;; color themes
 ;;
 
