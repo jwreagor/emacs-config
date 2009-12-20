@@ -32,7 +32,7 @@
 (color-theme-initialize)
 
 (when (window-system)
-  (color-theme-twilight))
+  (color-theme-github))
 
 ;;(when (not (window-system))
 ;;  (color-theme-something))
