@@ -28,7 +28,7 @@
 ;; function keys
 ;;
 (global-set-key [f1]  'info)
-(global-set-key [f2]  'goto-line)
+(global-set-key [f2]  'textmate-goto-symbol)
 (global-set-key [f3]  'customize-group)
 (global-set-key [f4]  'emacs-index-search)
 (global-set-key [f5]  'elisp-index-search)
@@ -38,8 +38,8 @@
 ;; cleanup, completion and deletion
 ;;
 (global-set-key (kbd "C-x \\") 'align-regexp)
-(global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-c n") 'clean-up-buffer-source)
+(global-set-key (kbd "M-/")    'hippie-expand)
+(global-set-key (kbd "C-c n")  'clean-up-buffer-source)
 
 ;;;;
 ;; searching
