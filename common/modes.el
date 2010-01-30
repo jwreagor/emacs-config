@@ -14,9 +14,10 @@
 ;; major
 ;;
 
-(require 'erlang-start)
-(autoload 'erlang-mode "erlang.el" "" t)
-(add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+(if (boundp 'erlang-mode)
+    (progn
+      (autoload 'erlang-mode "erlang.el" "" t)
+      (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))))
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 

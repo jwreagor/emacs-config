@@ -10,9 +10,13 @@
       user-specific-config (concat dotfiles-dir user-login-name ".el")
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
-      packages-dir (concat dotfiles-dir "packages")
-      erlang-dir "/usr/local/lib/erlang"
-      local-bin "/usr/local/bin")
+      packages-dir (concat dotfiles-dir "packages"))
+
+(if (file-exists-p "/usr/local/bin")
+    (setq local-bin "/usr/local/bin"))
+
+(if (file-exists-p "/opt/local/bin")
+    (setq port-bin "/opt/local/bin"))
 
 ;;;;
 ;; build load/exec-path
@@ -22,13 +26,10 @@
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path packages-dir)
-(add-to-list 'load-path (concat erlang-dir "/lib/tools-2.6.1/emacs"))
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/w3m")
 (add-to-list 'load-path (concat vendor-dir "/slime"))
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
-(add-to-list 'exec-path (concat erlang-dir "/bin"))
 
 ;;;;
 ;; build exec-path
