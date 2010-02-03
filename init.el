@@ -28,6 +28,7 @@
 (add-to-list 'load-path packages-dir)
 (add-to-list 'load-path (concat vendor-dir "/slime"))
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
+(add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 
@@ -126,7 +127,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono")))))
 
 (put 'upcase-region 'disabled nil)
 
