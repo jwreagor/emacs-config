@@ -3,6 +3,7 @@
 
 (server-start)
 (prefer-coding-system 'utf-8)
+(toggle-scroll-bar 0)
 (setq show-trailing-whitespace "t")
 
 ;;;;
@@ -34,8 +35,8 @@
 (when (window-system)
   (color-theme-vivid-chalk))
 
-;;(when (not (window-system))
-;;  (color-theme-something))
+(when (not (window-system))
+  (color-theme-midnight))
 
 (provide 'justin)
 ;; justin.el eof
