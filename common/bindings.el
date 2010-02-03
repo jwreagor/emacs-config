@@ -23,6 +23,7 @@
 ;;
 (global-set-key (kbd "C-c C-u C-c") 'un-camelcase-string)
 (global-set-key (kbd "C-t")         'universal-argument)
+(global-set-key (kbd "s-<return>")  'ns-toggle-fullscreen)
 
 ;;;;
 ;; function keys
