@@ -146,6 +146,15 @@
 ;; Buffers
 ;;
 
+(eval-when-compile (require 'cl))
+(defun toggle-transparency ()
+  (interactive)
+  (if (/=
+       (cadr (find 'alpha (frame-parameters nil) :key #'car))
+       100)
+      (set-frame-parameter nil 'alpha '(100 100))
+    (set-frame-parameter nil 'alpha '(85 60))))
+
 (defun ido-goto-symbol ()
   "Update the imenu index and then use ido to select a symbol to navigate to."
   (interactive)
