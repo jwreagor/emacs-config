@@ -33,7 +33,7 @@
 (color-theme-initialize)
 
 (when (window-system)
-  (color-theme-vivid-chalk))
+  (color-theme-zen-and-art))
 
 (when (not (window-system))
   (color-theme-midnight))
