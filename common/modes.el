@@ -7,6 +7,33 @@
 
 (require 'magit)
 
+(require 'ibuffer)
+
+(setq ibuffer-saved-filter-groups
+      '(("defaults"
+         ("tj" (filename . "^\\*tj\\*$"))
+         ("mhh" (filename . "^\\*mhh\\*$"))
+	 ("conf" (or (filename . ".emacs.d")
+                     (filename . "emacs-config")))
+	 ("org" (or (mode . org-mode)
+		    (filename . "OrgMode")))
+	 ("irc" (mode . erc-mode))
+         ("emacs" (or
+                 (name . "^\\*scratch\\*$")
+                 (name . "^\\*Messages\\*$")))
+         ("db" (or (name . "\*SQL\*")
+                   (filename . "\*sql\*")))
+	 ("help" (or (name . "\*Help\*")
+		     (name . "\*Apropos\*")
+		     (name . "\*info\*"))))))
+
+(add-hook 'ibuffer-mode-hook 
+	  '(lambda ()
+             (ibuffer-auto-mode 1)
+             (setq ibuffer-expert 1)
+             (setq ibuffer-show-empty-filter-groups nil)
+	     (ibuffer-switch-to-saved-filter-groups "defaults")))
+
 (require 'textmate)
 (textmate-mode)
 

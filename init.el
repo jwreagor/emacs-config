@@ -36,6 +36,7 @@
 ;; build exec-path
 ;;
 
+(setq exec-path (cons "/opt/local/lib/mysql5/bin" exec-path))
 (setq exec-path (cons "/usr/local/bin" exec-path))
 
 ;;;;
@@ -100,6 +101,7 @@
  '(eshell-scroll-to-bottom-on-input nil)
  '(eshell-term-name "xterm-color")
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
+ '(file-name-at-point-functions nil)
  '(fringe-mode 0 nil (fringe))
  '(indent-tabs-mode nil)
  '(js2-missing-semi-one-line-override t)
