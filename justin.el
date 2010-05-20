@@ -32,7 +32,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system) (color-theme-dirac))
+(when (window-system)       (color-theme-dirac))
 (when (not (window-system)) (color-theme-midnight))
 
 (provide 'justin)

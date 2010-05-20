@@ -18,6 +18,9 @@
 (if (file-exists-p "/opt/local/bin")
     (setq port-bin "/opt/local/bin"))
 
+(if (file-exists-p "/opt/local/lib/mysql5/bin")
+    (setq mysql-bin "/opt/local/lib/mysql5/bin"))
+
 ;;;;
 ;; build load/exec-path
 ;;
@@ -36,8 +39,14 @@
 ;; build exec-path
 ;;
 
-(setq exec-path (cons "/opt/local/lib/mysql5/bin" exec-path))
-(setq exec-path (cons "/usr/local/bin" exec-path))
+(if local-bin
+  (setq exec-path (cons local-bin exec-path)))
+
+(if port-bin
+  (setq exec-path (cons port-bin  exec-path)))
+
+(if mysql-bin
+  (setq exec-path (cons mysql-bin exec-path)))
 
 ;;;;
 ;; static loads
@@ -129,7 +138,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#191717" :foreground "#D2DEC4" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Andale_Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "LightGray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Menlo")))))
 
 (put 'upcase-region 'disabled nil)
 

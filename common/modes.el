@@ -11,9 +11,10 @@
 
 (setq ibuffer-saved-filter-groups
       '(("defaults"
-         ("tj" (filename . "^\\*tj\\*$"))
-         ("mhh" (filename . "^\\*mhh\\*$"))
-	 ("conf" (or (filename . ".emacs.d")
+         ("cocoa" (filename . "\\Cocoa"))
+         ("tj" (filename . "\\tj"))
+         ("mhh" (filename . "\\mhh"))
+	 ("conf" (or (filename . "\.emacs\.d")
                      (filename . "emacs-config")))
 	 ("org" (or (mode . org-mode)
 		    (filename . "OrgMode")))
@@ -21,7 +22,7 @@
          ("emacs" (or
                  (name . "^\\*scratch\\*$")
                  (name . "^\\*Messages\\*$")))
-         ("db" (or (name . "\*SQL\*")
+         ("db" (or (name . "\\*SQL\\*")
                    (filename . "\*sql\*")))
 	 ("help" (or (name . "\*Help\*")
 		     (name . "\*Apropos\*")
