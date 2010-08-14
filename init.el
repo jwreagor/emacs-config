@@ -30,6 +30,7 @@
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path packages-dir)
 (add-to-list 'load-path (concat vendor-dir "/slime"))
+(add-to-list 'load-path (concat vendor-dir "/yasnippet"))
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
@@ -71,6 +72,7 @@
 (require 'lisp-env)
 (require 'org-env)
 (require 'js-env)
+(require 'peepopen)
 
 ;;;;
 ;; user/system specific
@@ -138,7 +140,9 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "LightGray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Menlo")))))
+ '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Andale_Mono"))))
+ '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
+ '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 
 (put 'upcase-region 'disabled nil)
 

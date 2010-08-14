@@ -2,9 +2,13 @@
 ;;
 
 (server-start)
+
 (prefer-coding-system 'utf-8)
+
 (toggle-scroll-bar 0)
+
 (setq show-trailing-whitespace "t")
+(setq ns-pop-up-frames nil)
 
 ;;;;
 ;; copy line req.
@@ -32,7 +36,8 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system)       (color-theme-dirac))
+(when (window-system)       (color-theme-tango-2))
+;; (when (window-system)       (color-theme-github))
 (when (not (window-system)) (color-theme-midnight))
 
 (provide 'justin)

@@ -2,7 +2,7 @@
 ;;
 
 (add-to-list 'load-path (concat common-dir "/ruby-env"))
-(add-to-list 'load-path (concat vendor-dir "/rinari"))
+;; (add-to-list 'load-path (concat vendor-dir "/rinari"))
 
 ;;;;
 ;; autoloads for libraries
@@ -13,7 +13,7 @@
 (autoload 'inf-ruby "inf-ruby" "" t)
 (autoload 'ruby-electric-mode "ruby-electric" "" t)
 (autoload 'ruby-compilation-minor-mode "ruby-compilation" "" t)
-(autoload 'rinari-minor-mode "rinari" "" t)
+;; (autoload 'rinari-minor-mode "rinari" "" t)
 
 ;;;;
 ;; ruby/rspec-mode hooks
@@ -24,9 +24,10 @@
             (require 'ruby-compilation)
             (ruby-electric-mode t)
             (inf-ruby-keys)
-            (rinari-minor-mode)
-            (setq rinari-tags-file-name ".TAGS")
-            (local-set-key (kbd "C-c h r") 'ri)))
+            ;; (rinari-minor-mode)
+            ;; (setq rinari-tags-file-name ".TAGS")
+            (local-set-key (kbd "C-c h r") 'ri)
+            (local-set-key (kbd "TAB") nil)))
 
 (add-hook 'rspec-mode-hook
           '(lambda ()

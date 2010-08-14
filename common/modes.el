@@ -7,34 +7,6 @@
 
 (require 'magit)
 
-(require 'ibuffer)
-
-(setq ibuffer-saved-filter-groups
-      '(("defaults"
-         ("cocoa" (filename . "\\Cocoa"))
-         ("tj" (filename . "\\tj"))
-         ("mhh" (filename . "\\mhh"))
-	 ("conf" (or (filename . "\.emacs\.d")
-                     (filename . "emacs-config")))
-	 ("org" (or (mode . org-mode)
-		    (filename . "OrgMode")))
-	 ("irc" (mode . erc-mode))
-         ("emacs" (or
-                 (name . "^\\*scratch\\*$")
-                 (name . "^\\*Messages\\*$")))
-         ("db" (or (name . "\\*SQL\\*")
-                   (filename . "\*sql\*")))
-	 ("help" (or (name . "\*Help\*")
-		     (name . "\*Apropos\*")
-		     (name . "\*info\*"))))))
-
-(add-hook 'ibuffer-mode-hook 
-	  '(lambda ()
-             (ibuffer-auto-mode 1)
-             (setq ibuffer-expert 1)
-             (setq ibuffer-show-empty-filter-groups nil)
-	     (ibuffer-switch-to-saved-filter-groups "defaults")))
-
 (require 'textmate)
 (textmate-mode)
 
@@ -78,13 +50,48 @@
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
 
 ;;;;
+;; ibuffer
+;;
+
+(require 'ibuffer)
+
+(setq ibuffer-saved-filter-groups
+      '(("defaults"
+         ("cocoa" (filename . "\\Cocoa"))
+         ("tj" (filename . "\\tj"))
+         ("em" (filename . "\\emosie"))
+         ("gs" (filename . "\\gitsorb"))
+         ("mhh" (filename . "\\mhh"))
+	 ("conf" (or (filename . "\.emacs\.d")
+                     (filename . "emacs-config")))
+	 ("org" (or (mode . org-mode)
+		    (filename . "OrgMode")))
+	 ("irc" (mode . erc-mode))
+         ("emacs" (or
+                 (name . "^\\*scratch\\*$")
+                 (name . "^\\*Messages\\*$")))
+         ("db" (or (name . "\\*SQL\\*")
+                   (filename . "\*sql\*")))
+	 ("help" (or (name . "\*Help\*")
+		     (name . "\*Apropos\*")
+		     (name . "\*info\*"))))))
+
+(add-hook 'ibuffer-mode-hook 
+	  '(lambda ()
+             (ibuffer-auto-mode 1)
+             (setq ibuffer-expert 1)
+             (setq ibuffer-show-empty-filter-groups nil)
+	     (ibuffer-switch-to-saved-filter-groups "defaults")))
+
+;;;;
 ;; yasnippet
 ;;
 
-;; (require 'yasnippet)
-;; (setq yas/root-directory (concat dotfiles-dir "snippets"))
-;; (yas/load-directory yas/root-directory)
-;; (yas/global-mode)
+(require 'yasnippet)
+(setq yas/root-directory (concat dotfiles-dir "snippets"))
+(yas/load-directory yas/root-directory)
+(yas/global-mode)
+(yas/initialize)
 
 (provide 'modes)
 ;;; modes.el eof
