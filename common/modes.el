@@ -6,7 +6,7 @@
 ;;
 
 (require 'magit)
-
+(require 'rainbow-mode)
 (require 'textmate)
 (textmate-mode)
 
