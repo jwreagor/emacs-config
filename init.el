@@ -41,13 +41,13 @@
 ;; build exec-path
 ;;
 
-(if local-bin
+(if (boundp 'local-bin)
   (setq exec-path (cons local-bin exec-path)))
 
-(if port-bin
+(if (boundp 'port-bin)
   (setq exec-path (cons port-bin  exec-path)))
 
-(if mysql-bin
+(if (boundp 'mysql-bin)
   (setq exec-path (cons mysql-bin exec-path)))
 
 ;;;;
