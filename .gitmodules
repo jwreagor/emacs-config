@@ -13,3 +13,6 @@
 [submodule "vendor/yasnippet"]
 	path = vendor/yasnippet
 	url = http://github.com/emacsmirror/yasnippet.git
+[submodule "vendor/rainbow-mode"]
+	path = vendor/rainbow-mode
+	url = git://git.naquadah.org/rainbow.git
