@@ -10,9 +10,6 @@
 [submodule "vendor/rinari"]
 	path = vendor/rinari
 	url = git://github.com/eschulte/rinari.git
-[submodule "vendor/emacs-xcode"]
-	path = vendor/emacs-xcode
-	url = git@github.com:cheapRoc/emacs-xcode.git
 [submodule "vendor/rainbow-mode"]
 	path = vendor/rainbow-mode
 	url = git://git.naquadah.org/~jd/jd-el.git
