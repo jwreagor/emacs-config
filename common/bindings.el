@@ -21,6 +21,7 @@
 ;;;;
 ;; misc
 ;;
+(global-set-key (kbd "C-M-g")       'ack)
 (global-set-key (kbd "C-x C-b")     'ibuffer)
 (global-set-key (kbd "C-c C-u C-c") 'un-camelcase-string)
 (global-set-key (kbd "C-t")         'universal-argument)
