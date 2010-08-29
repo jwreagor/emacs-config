@@ -43,12 +43,27 @@
 
 (autoload 'espresso-mode "espresso")
 
+(autoload 'coffee-mode "coffee-mode")
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
+
+;;;;
+;; coffee-script
+;;
+
+(defun coffee-custom ()
+  "coffee-mode-hook"
+  (set (make-local-variable 'tab-width) 2))
+
+(add-hook 'coffee-mode-hook
+          '(lambda() (coffee-custom)))
 
 ;;;;
 ;; ibuffer

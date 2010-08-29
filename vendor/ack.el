@@ -40,7 +40,7 @@
   "Setting this value to `t' will have `ack' do its best to fill
 in the --type argument to the ack command")
 
-(defvar ack-command "/opt/local/bin/ack --nogroup "
+(defvar ack-command "/opt/local/bin/ack --nogroup --nocolor"
   "The command to be run by the ack function.")
 
 (defvar ack-mode-type-map
