@@ -12,6 +12,7 @@
 (global-set-key (kbd "C-M-]") 'previous-buffer)
 
 ;; Windows
+(global-set-key [f3] 'ack)
 (global-set-key [f5] 'split-window-horizontally)
 (global-set-key [f6] 'split-window-vertically)
 (global-set-key [f7] 'delete-window)

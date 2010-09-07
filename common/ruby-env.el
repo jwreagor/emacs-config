@@ -15,6 +15,8 @@
 (autoload 'ruby-compilation-minor-mode "ruby-compilation" "" t)
 ;; (autoload 'rinari-minor-mode "rinari" "" t)
 
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+
 ;;;;
 ;; ruby/rspec-mode hooks
 ;;
