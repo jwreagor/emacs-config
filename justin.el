@@ -36,8 +36,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system)       (color-theme-tango-2))
-;; (when (window-system)       (color-theme-github))
+(when (window-system)       (color-theme-github))
 (when (not (window-system)) (color-theme-midnight))
 
 (provide 'justin)

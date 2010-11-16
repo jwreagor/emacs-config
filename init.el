@@ -37,6 +37,7 @@
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (add-to-list 'load-path (concat vendor-dir "/coffee-mode"))
+(add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
 
 ;;;;
 ;; build exec-path
@@ -85,6 +86,8 @@
 
 (if (file-exists-p user-specific-config)
     (load user-specific-config))
+
+ ;; '(default ((t (:stipple nil :background "#eeeeee" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Menlo"))))
 
 ;;;;
 ;; customize settings
@@ -144,7 +147,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#F8F8F8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 110 :width normal :foundry "apple" :family "Bitstream_Vera_Sans_Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#191717" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Menlo"))))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 

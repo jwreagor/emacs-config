@@ -19,6 +19,11 @@
 (global-set-key (kbd "M-<backspace>") 'backward-nuke-word)
 
 ;;;;
+;; insert
+;;
+(global-set-key (kbd "C-0") (lambda () (interactive) (insert " ")))
+
+;;;;
 ;; misc
 ;;
 (global-set-key (kbd "C-M-g")       'ack)
@@ -26,6 +31,7 @@
 (global-set-key (kbd "C-c C-u C-c") 'un-camelcase-string)
 (global-set-key (kbd "C-t")         'universal-argument)
 (global-set-key (kbd "s-<return>")  'ns-toggle-fullscreen)
+(global-set-key (kbd "C-s-<pause>") 'revert-all-buffers)
 
 ;;;;
 ;; function keys

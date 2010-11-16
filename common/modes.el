@@ -41,6 +41,9 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.j$" . objc-mode))
 
+(add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
+(add-to-list 'auto-mode-alist '("\\.h$" . objc-mode))
+
 (autoload 'espresso-mode "espresso")
 
 (autoload 'coffee-mode "coffee-mode")
@@ -53,6 +56,9 @@
 
 (autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
+
+(autoload 'treetop-mode "treetop-mode")
+(add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
 
 ;;;;
 ;; coffee-script
