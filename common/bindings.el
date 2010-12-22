@@ -34,6 +34,13 @@
 (global-set-key (kbd "C-s-<pause>") 'revert-all-buffers)
 
 ;;;;
+;; scm
+;;
+
+;; Cmd-Ctrl-s
+(global-set-key (kbd "C-s-<268632083>") 'magit-status)
+
+;;;;
 ;; function keys
 ;;
 (global-set-key [f1]  'info)
