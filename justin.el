@@ -36,7 +36,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(when (window-system)       (color-theme-github))
+(when (window-system)       (color-theme-charcoal-black))
 (when (not (window-system)) (color-theme-midnight))
 
 (provide 'justin)

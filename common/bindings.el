@@ -39,6 +39,8 @@
 
 ;; Cmd-Ctrl-s
 (global-set-key (kbd "C-s-<268632083>") 'magit-status)
+;; Cmd-Ctrl-o
+(global-set-key (kbd "C-s-<268632079>") 'magit-log)
 
 ;;;;
 ;; function keys
@@ -115,6 +117,19 @@
 ;;
 (global-set-key (kbd "C-h a") 'apropos)
 (global-set-key (kbd "C-h c") 'cheat)
+
+;;;;
+;; jekyll
+;;
+(global-set-key (kbd "C-c b n") 'jekyll-draft-post)
+(global-set-key (kbd "C-c b P") 'jekyll-publish-post)
+(global-set-key (kbd "C-c b p") (lambda () 
+                                  (interactive)
+                                  (find-file "~/Development/cheapRoc.github.com/_posts/")))
+(global-set-key (kbd "C-c b d") (lambda () 
+                                  (interactive)
+                                  (find-file "~/Development/cheapRoc.github.com/_drafts/")))
+
 
 (provide 'bindings)
 ;;; bindings.el eof

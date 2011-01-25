@@ -101,6 +101,7 @@
  '(blink-cursor-mode t)
  '(coffee-tab-width 2)
  '(column-number-mode t)
+ '(dired-at-point-require-prefix nil)
  '(display-battery-mode t)
  '(display-time-mode t)
  '(erc-email-userid "justin")
@@ -118,12 +119,19 @@
  '(eshell-scroll-to-bottom-on-input nil)
  '(eshell-term-name "xterm-color")
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
+ '(ffap-dired-wildcards "[*?][^/]*\\'")
  '(file-name-at-point-functions nil)
  '(fringe-mode 0 nil (fringe))
+ '(ido-create-new-buffer (quote always))
+ '(ido-enable-flex-matching t)
+ '(ido-max-prospects 10)
+ '(ido-mode (quote both) nil (ido))
+ '(ido-use-filename-at-point nil)
  '(indent-tabs-mode nil)
  '(js2-missing-semi-one-line-override t)
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 1)
+ '(longlines-auto-wrap nil)
  '(menu-bar-mode t)
  '(ns-alternate-modifier (quote meta))
  '(ns-antialias-text t)
@@ -137,6 +145,8 @@
  '(standard-indent 2)
  '(tab-always-indent (quote always))
  '(tab-width 4)
+ '(truncate-lines nil)
+ '(truncate-partial-width-windows nil)
  '(yas/prompt-functions (quote (yas/ido-prompt yas/completing-prompt yas/x-prompt yas/dropdown-prompt yas/no-prompt))))
 
 (provide 'init)
@@ -147,7 +157,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#191717" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Menlo"))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Menlo"))))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 

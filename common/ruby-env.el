@@ -16,6 +16,9 @@
 ;; (autoload 'rinari-minor-mode "rinari" "" t)
 
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 
 ;;;;
 ;; ruby/rspec-mode hooks

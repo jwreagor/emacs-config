@@ -9,6 +9,7 @@
 (require 'ack)
 (require 'rainbow-mode)
 (require 'textmate)
+(require 'jekyll)
 (textmate-mode)
 
 ;;;;
@@ -23,7 +24,8 @@
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 
 (autoload 'markdown-mode "markdown-mode.el" "" t)
-(add-to-list 'auto-mode-alist '("\\.m[d|arkdown]\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 (autoload 'feature-mode "feature-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.feature$" . feature-mode))
