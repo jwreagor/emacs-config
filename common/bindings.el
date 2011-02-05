@@ -125,10 +125,10 @@
 (global-set-key (kbd "C-c b P") 'jekyll-publish-post)
 (global-set-key (kbd "C-c b p") (lambda () 
                                   (interactive)
-                                  (find-file "~/Development/cheapRoc.github.com/_posts/")))
+                                  (find-file "/Users/justin/Development/cheapRoc.github.com/_posts/")))
 (global-set-key (kbd "C-c b d") (lambda () 
                                   (interactive)
-                                  (find-file "~/Development/cheapRoc.github.com/_drafts/")))
+                                  (find-file "/Users/justin/Development/cheapRoc.github.com/_drafts/")))
 
 
 (provide 'bindings)

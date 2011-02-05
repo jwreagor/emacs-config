@@ -38,6 +38,7 @@
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
 (add-to-list 'load-path (concat vendor-dir "/coffee-mode"))
 (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
+(add-to-list 'load-path (concat vendor-dir "/scala"))
 
 ;;;;
 ;; build exec-path

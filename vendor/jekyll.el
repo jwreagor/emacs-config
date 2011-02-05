@@ -22,8 +22,8 @@
 
 
 (provide 'jekyll)
-
-(defvar jekyll-directory nil
+                                   
+(defvar jekyll-directory "/Users/justin/Development/cheapRoc.github.com"
   "Path to Jekyll blog.")
 (defvar jekyll-drafts-dir "_drafts/"
   "Relative path to drafts directory.")

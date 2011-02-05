@@ -10,10 +10,11 @@
 (require 'rainbow-mode)
 (require 'textmate)
 (require 'jekyll)
+(require 'scala-mode-auto)
 (textmate-mode)
 
 ;;;;
-;; major
+;; major - autoloads
 ;;
 
 (if (boundp 'erlang-mode)
