@@ -84,9 +84,11 @@
       '(("defaults"
          ("cocoa" (filename . "\\Cocoa"))
          ("tj" (filename . "\\tj"))
-         ("em" (filename . "\\emosie"))
-         ("gs" (filename . "\\gitsorb"))
+         ("fb" (filename . "\\fb"))
          ("mhh" (filename . "\\mhh"))
+         ("conhar" (filename . "\\conhar"))
+         ("cardboard" (filename . "\\cardboard"))
+         ("crimescheme" (filename . "\\cheapRoc\.github\.com"))
 	 ("conf" (or (filename . "\.emacs\.d")
                      (filename . "emacs-config")))
 	 ("org" (or (mode . org-mode)
