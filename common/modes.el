@@ -11,13 +11,14 @@
 (require 'textmate)
 (require 'jekyll)
 (require 'scala-mode-auto)
+(require 'gist)
 (textmate-mode)
 
 ;;;;
 ;; major - autoloads
 ;;
 
-(if (boundp 'erlang-mode)
+(if (boundp 'erlang-tools)
     (progn
       (autoload 'erlang-mode "erlang.el" "" t)
       (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))))
@@ -84,7 +85,7 @@
       '(("defaults"
          ("cocoa" (filename . "\\Cocoa"))
          ("tj" (filename . "\\tj"))
-         ("fb" (filename . "\\fb"))
+         ("opinion-trac" (filename . "\\opinion-trac"))
          ("mhh" (filename . "\\mhh"))
          ("conhar" (filename . "\\conhar"))
          ("cardboard" (filename . "\\cardboard"))
@@ -119,6 +120,8 @@
 (yas/load-directory yas/root-directory)
 (yas/global-mode)
 (yas/initialize)
+
+(hl-line-mode)
 
 (provide 'modes)
 ;;; modes.el eof

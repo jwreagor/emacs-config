@@ -32,6 +32,8 @@
 (global-set-key (kbd "C-t")         'universal-argument)
 (global-set-key (kbd "s-<return>")  'ns-toggle-fullscreen)
 (global-set-key (kbd "C-s-<pause>") 'revert-all-buffers)
+(global-set-key (kbd "C-x o")       'open-current-buffer)
+(global-set-key (kbd "C-x v")       'view-url)
 
 ;;;;
 ;; scm

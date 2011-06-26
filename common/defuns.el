@@ -146,6 +146,15 @@
 ;; Buffers
 ;;
 
+(defun open-current-buffer (&optional app)
+ "Open current buffer in some APP on OS X."
+ (interactive)
+ (cond (app
+        (shell-command (concat "open -a " app " " buffer-file-name)))
+       ((string-match "\\/safarisource\\|\\.html$" buffer-file-name)
+        (shell-command (concat "open -a safari " buffer-file-name)))))
+
+
 (defun revert-all-buffers ()
   "Refreshes all open buffers from their respective files"
   (interactive)

@@ -5,12 +5,15 @@
 ;; system locations
 ;;
 
+;; TODO: Move to defining everything based on the host env. (getenv "ERLANGPATH")
+
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
       system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
-      packages-dir (concat dotfiles-dir "packages"))
+      packages-dir (concat dotfiles-dir "packages")
+      erlang-dir "/usr/local/Cellar/erlang/R14B03")
 
 (if (file-exists-p "/usr/local/bin")
     (setq local-bin "/usr/local/bin"))
@@ -20,6 +23,11 @@
 
 (if (file-exists-p "/opt/local/lib/mysql5/bin")
     (setq mysql-bin "/opt/local/lib/mysql5/bin"))
+
+(if (file-exists-p erlang-dir)
+    (progn
+      (setq erlang-bin (concat erlang-dir "/bin"))
+      (setq erlang-tools (concat erlang-dir "/lib/erlang/lib/tools-2.6.6.4/emacs"))))
 
 ;;;;
 ;; build load/exec-path
@@ -39,19 +47,23 @@
 (add-to-list 'load-path (concat vendor-dir "/coffee-mode"))
 (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
 (add-to-list 'load-path (concat vendor-dir "/scala"))
+(add-to-list 'load-path erlang-tools)
 
 ;;;;
 ;; build exec-path
 ;;
 
 (if (boundp 'local-bin)
-  (setq exec-path (cons local-bin exec-path)))
+    (add-to-list 'exec-path local-bin))
 
 (if (boundp 'port-bin)
-  (setq exec-path (cons port-bin  exec-path)))
+    (add-to-list 'exec-path port-bin))
 
 (if (boundp 'mysql-bin)
-  (setq exec-path (cons mysql-bin exec-path)))
+    (add-to-list 'exec-path mysql-bin))
+
+(if (boundp 'erlang-bin)
+    (add-to-list 'exec-path erlang-bin))
 
 ;;;;
 ;; static loads
@@ -159,7 +171,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#191717" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Monaco"))))
+ '(default ((t (:inherit nil :stipple nil :background "#191717" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Andale_Mono"))))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 
