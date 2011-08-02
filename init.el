@@ -148,7 +148,7 @@
  '(longlines-auto-wrap nil)
  '(menu-bar-mode t)
  '(ns-alternate-modifier (quote meta))
- '(ns-antialias-text nil)
+ '(ns-antialias-text t)
  '(ns-command-modifier (quote super))
  '(ns-control-modifier (quote control))
  '(ns-function-modifier (quote none))
@@ -171,7 +171,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#191717" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Andale_Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Monaco"))))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 

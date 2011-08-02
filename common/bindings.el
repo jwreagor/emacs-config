@@ -32,7 +32,7 @@
 (global-set-key (kbd "C-t")         'universal-argument)
 (global-set-key (kbd "s-<return>")  'ns-toggle-fullscreen)
 (global-set-key (kbd "C-s-<pause>") 'revert-all-buffers)
-(global-set-key (kbd "C-x o")       'open-current-buffer)
+(global-set-key (kbd "C-x M-o")       'open-current-buffer)
 (global-set-key (kbd "C-x v")       'view-url)
 
 ;;;;
@@ -76,12 +76,17 @@
 (global-set-key (kbd "M-n")     'scroll-one-line-up)
 (global-set-key (kbd "M-p")     'scroll-one-line-down)
 (global-set-key (kbd "C-x C-i") 'ido-goto-symbol)
+(global-set-key (kbd "C-x C-l") 'goto-line)
 
 (windmove-default-keybindings) ;; Shift+direction window switching
 
 (global-set-key (kbd "C-x O") (lambda ()
                                (interactive)
                                (other-window -1)))
+
+(global-set-key (kbd "C-x o") (lambda ()
+                                  (interactive)
+                                  (other-window 1)))
 
 (global-set-key (kbd "C-x C-o") (lambda ()
                                   (interactive)
