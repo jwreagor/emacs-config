@@ -171,7 +171,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "color-234" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "apple" :family "Monaco"))))
+ '(default ((t (:inherit nil :stipple nil :background "color-233" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 
