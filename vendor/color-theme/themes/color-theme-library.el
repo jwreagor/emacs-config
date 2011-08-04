@@ -560,11 +560,11 @@ inspired by color-theme-galois."
 (add-to-list 'color-themes '(color-theme-tango2  "Tango 2" "Some Body"))
 
 (defun color-theme-starlight ()
-  "Color theme by cheapRoc, based off the Emacs Twilight ColorTheme, created 2008-12-23"
+  "Color theme by cheapRoc, based off the Emacs Twilight ColorTheme, updated 2011-06-05"
   (interactive)
   (color-theme-install
    '(color-theme-starlight
-     ((background-color . "black")
+     ((background-color . "#111111")
       (background-mode . dark)
       (border-color . "black")
       (cursor-color . "#A7A7A7")
