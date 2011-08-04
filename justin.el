@@ -35,8 +35,8 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-
 (color-theme-starlight)
+
 ;; (when (window-system)       (color-theme-starlight))
 ;; (when (not (window-system)) (color-theme-midnight))
 
