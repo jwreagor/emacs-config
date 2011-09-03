@@ -13,7 +13,8 @@
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
       packages-dir (concat dotfiles-dir "packages")
-      erlang-dir "/usr/local/Cellar/erlang/R14B03")
+      erlang-dir "/usr/local/Cellar/erlang/R14B03"
+      slime-dir (concat dotfiles-dir "elpa" "slime-20100404.1"))
 
 (if (file-exists-p "/usr/local/bin")
     (setq local-bin "/usr/local/bin"))
@@ -37,7 +38,6 @@
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path packages-dir)
-(add-to-list 'load-path (concat vendor-dir "/slime"))
 (add-to-list 'load-path (concat vendor-dir "/yasnippet"))
 (add-to-list 'load-path (concat vendor-dir "/rainbow-mode"))
 (add-to-list 'load-path (concat vendor-dir "/color-theme"))
@@ -48,6 +48,7 @@
 (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
 (add-to-list 'load-path (concat vendor-dir "/scala"))
 (add-to-list 'load-path erlang-tools)
+(add-to-list 'load-path slime-dir)
 
 ;;;;
 ;; build exec-path
@@ -69,6 +70,7 @@
 ;; static loads
 ;;
 
+(require 'package)
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
@@ -171,7 +173,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "color-233" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 

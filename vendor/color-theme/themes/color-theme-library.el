@@ -653,18 +653,18 @@ inspired by color-theme-galois."
 (add-to-list 'color-themes '(color-theme-twilight  "Twilight" "Marcus Crafter"))
 
 (defun color-theme-github ()
-  "Color theme by Dudley Flanders, created 2008-07-11."
+  "Github color theme for GNU Emacs."
   (interactive)
   (color-theme-install
    '(color-theme-github
-     ((background-color . "#191717")
+     ((background-color . "#f8f8ff")
       (background-mode . light)
       (border-color . "black")
-      (cursor-color . "#666666")
-      (foreground-color . "#eeeeee")
+      (cursor-color . "#000000")
+      (foreground-color . "#000000")
       (mouse-color . "#bcd5fa"))
      ()
-     (default ((t (:stipple nil :background "#191717" :foreground "#eeeeee" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
+     (default ((t (:stipple nil :background "#f8f8ff" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
      (css-property ((t (:foreground "#0086b3"))))
      (css-selector ((t (:foreground "#990000"))))
      (cursor ((t (:background "#a7a7a7"))))
@@ -698,7 +698,7 @@ inspired by color-theme-galois."
      (link ((t (:foreground "blue1" :underline t))))
      (link-visited ((t (:underline t :foreground "magenta4"))))
      (minibuffer-prompt ((t (:foreground "#445588"))))
-     (mode-line ((t (:background "#f7f7ff" :foreground "#888888" :box (:line-width 0) :height 1.1))))
+     (mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.85))))
      (mouse ((t (:background "#bcd5fa"))))
      (quack-about-face ((t (:family "Helvetica"))))
      (quack-about-title-face ((t (:bold t :foreground "#008000" :weight bold :height 2.0 :family "Helvetica"))))
@@ -708,7 +708,7 @@ inspired by color-theme-galois."
      (quack-pltfile-prologue-face ((t (:background "gray66" :foreground "black"))))
      (quack-pltish-class-defn-face ((t (:bold t :weight bold :foreground "purple3"))))
      (quack-pltish-comment-face ((t (:foreground "cyan4"))))
-     (quack-pltish-defn-face ((t (:bold t :foreground "blue8" :weight bold))))
+     (quack-pltish-defn-face ((t (:bold t :foreground "blue3" :weight bold))))
      (quack-pltish-keyword-face ((t (:bold t :weight bold))))
      (quack-pltish-module-defn-face ((t (:bold t :weight bold :foreground "purple3"))))
      (quack-pltish-paren-face ((t (:foreground "red3"))))
