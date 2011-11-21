@@ -70,6 +70,13 @@
 (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
 (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
 
+(require 'sws-mode)
+(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . sws-mode))
+
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+
 ;;;;
 ;; coffee-script
 ;;
@@ -91,6 +98,7 @@
       '(("defaults"
          ("cocoa" (filename . "\\Cocoa"))
          ("tj" (filename . "\\tj"))
+         ("el" (filename . "\\elocal.*"))
          ("opinion-trac" (filename . "\\opinion-trac"))
          ("mhh" (filename . "\\mhh"))
          ("conhar" (filename . "\\conhar"))

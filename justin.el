@@ -5,8 +5,8 @@
 
 (prefer-coding-system 'utf-8)
 
-(toggle-scroll-bar -1)
-(menu-bar-mode -1)
+(toggle-scroll-bar 0)
+(menu-bar-mode 0)
 
 (setq show-trailing-whitespace "t")
 (setq ns-pop-up-frames nil)
@@ -36,7 +36,7 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-github)
+(color-theme-djcb-dark)
 
 ;; (when (window-system)       (color-theme-starlight))
 ;; (when (not (window-system)) (color-theme-midnight))
