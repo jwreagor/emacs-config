@@ -4,6 +4,7 @@
 ;;;;
 ;; copy, paste and repeat
 ;;
+(global-set-key (kbd "C-SPC")         'set-mark-command)
 (global-set-key (kbd "C-t")           'tags-loop-continue)
 (global-set-key (kbd "C-u")           'copy-region-as-kill)
 (global-set-key (kbd "C-c C-c")       'comment-region)

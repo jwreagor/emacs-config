@@ -61,9 +61,7 @@
      (mode-line ((t (:foreground "#ffffff" :background "#333333"))))
      (region ((t (:foreground nil :background "#555555"))))
      (show-paren-match-face ((t (:bold t :foreground "#ffffff" :background "#050505")))))))
-(add-to-list 'color-themes '(color-theme-djcb-dark  "DJCB Dark" "DJCB"))
-
-
+(add-to-list 'color-themes '(color-theme-djcb-dark  "DJCB Dark" "Some Dude"))
 
 (defun color-theme-charcoal-personal ()
   "Personal color theme for Chris Petrilli.
