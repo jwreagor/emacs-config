@@ -50,6 +50,7 @@
 (add-to-list 'load-path (concat vendor-dir "/jade-mode"))
 (add-to-list 'load-path erlang-tools)
 (add-to-list 'load-path slime-dir)
+(add-to-list 'load-path (concat vendor-dir "/nu-mode"))
 
 ;;;;
 ;; build exec-path

@@ -1,6 +1,7 @@
 backups
 auto-save-list
 tramp
+elpa/archives
 /elpa/archive-contents
 /elpa/builtin-packages
 /svn-repos

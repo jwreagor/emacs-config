@@ -77,6 +77,8 @@
 
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 
+(require 'nu)
+
 ;;;;
 ;; coffee-script
 ;;
