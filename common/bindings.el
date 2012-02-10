@@ -35,6 +35,7 @@
 (global-set-key (kbd "C-s-<pause>") 'revert-all-buffers)
 (global-set-key (kbd "C-x M-o")       'open-current-buffer)
 (global-set-key (kbd "C-x v")       'view-url)
+(global-set-key (kbd "C-c t")       'org-todo)
 
 ;;;;
 ;; scm

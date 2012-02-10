@@ -69,6 +69,7 @@
 (add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
 (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
 (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
 
 (require 'sws-mode)
 (require 'jade-mode)
