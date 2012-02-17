@@ -13,8 +13,7 @@
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
       packages-dir (concat dotfiles-dir "packages")
-      erlang-dir "/usr/local/Cellar/erlang/R14B03"
-      slime-dir (concat dotfiles-dir "elpa" "slime-20100404.1"))
+      erlang-dir "/usr/local/Cellar/erlang/R14B03")
 
 (if (file-exists-p "/usr/local/bin")
     (setq local-bin "/usr/local/bin"))
@@ -49,7 +48,6 @@
 (add-to-list 'load-path (concat vendor-dir "/scala"))
 (add-to-list 'load-path (concat vendor-dir "/jade-mode"))
 (add-to-list 'load-path erlang-tools)
-(add-to-list 'load-path slime-dir)
 (add-to-list 'load-path (concat vendor-dir "/nu-mode"))
 
 ;;;;
