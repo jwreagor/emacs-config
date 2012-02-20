@@ -54,6 +54,7 @@
 (global-set-key [f3]  'customize-group)
 (global-set-key [f4]  'emacs-index-search)
 (global-set-key [f8]  'describe-bindings)
+(global-set-key [f9]  'magit-status)
 (global-set-key [f12] 'menu-bar-mode)
 
 ;;;;
