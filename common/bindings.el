@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-t")         'universal-argument)
 (global-set-key (kbd "s-<return>")  'ns-toggle-fullscreen)
 (global-set-key (kbd "C-s-<pause>") 'revert-all-buffers)
-(global-set-key (kbd "C-x M-o")       'open-current-buffer)
+(global-set-key (kbd "C-x M-o")     'open-current-buffer)
 (global-set-key (kbd "C-x v")       'view-url)
 (global-set-key (kbd "C-c t")       'org-todo)
 
@@ -53,7 +53,7 @@
 (global-set-key [f2]  'textmate-goto-symbol)
 (global-set-key [f3]  'customize-group)
 (global-set-key [f4]  'emacs-index-search)
-(global-set-key [f5]  'elisp-index-search)
+(global-set-key [f8]  'describe-bindings)
 (global-set-key [f12] 'menu-bar-mode)
 
 ;;;;
