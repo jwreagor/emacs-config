@@ -1,4 +1,0 @@
-lisp-implementation-type: Clozure Common Lisp
-lisp-implementation-version: Version 1.7-r14925M  (DarwinX8664)
-machine-type: x86_64
-machine-version: MacBookAir4,2

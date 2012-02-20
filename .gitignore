@@ -14,3 +14,4 @@ freshtags.el/
 /eshell
 places
 quicklisp/tmp
+quicklisp/cache
