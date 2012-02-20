@@ -174,6 +174,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :foreground "default" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
+ '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
+ '(rainbow-delimiters-depth-3-face ((((background dark)) (:foreground "#458adc"))))
+ '(rainbow-delimiters-depth-4-face ((((background dark)) (:foreground "#45cedc"))))
+ '(rainbow-delimiters-depth-5-face ((((background dark)) (:foreground "#53de46"))))
+ '(rainbow-delimiters-depth-6-face ((((background dark)) (:foreground "#ccf04b"))))
+ '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "#ffd850"))))
+ '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "#ff8e50"))))
+ '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "#fb4f56"))))
  '(trailing-whitespace ((t nil)))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
