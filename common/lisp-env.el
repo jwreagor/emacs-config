@@ -5,7 +5,7 @@
 ;; slime
 ;;
 
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(load (concat dotfiles-dir "quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "/usr/local/bin/ccl64")
 
 (eval-after-load "slime"
