@@ -627,7 +627,7 @@ inspired by color-theme-galois."
      (font-lock-warning-face ((t (:bold t :foreground "Red"))))
      (hl-line ((t (:background "#112233"))))
      (gui-element ((t (:background "#D4D0C8" :foreground "black"))))
-     (region ((t (:background "#27292A"))))
+     (region ((t (:background "#3b3e40"))))
      (mode-line ((t (:background "grey75" :foreground "black"))))
      (highlight ((t (:background "#222222"))))
      (highline-face ((t (:background "SeaGreen"))))
