@@ -597,7 +597,7 @@ inspired by color-theme-galois."
   (interactive)
   (color-theme-install
    '(color-theme-starlight
-     ((background-color . "#111111")
+     ((background-color . "#212121")
       (background-mode . dark)
       (border-color . "black")
       (cursor-color . "#A7A7A7")

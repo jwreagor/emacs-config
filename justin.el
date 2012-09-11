@@ -7,6 +7,7 @@
 
 (toggle-scroll-bar 0)
 (menu-bar-mode 0)
+(display-time-mode 0)
 
 (setq show-trailing-whitespace "t")
 (setq ns-pop-up-frames nil)
