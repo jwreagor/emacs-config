@@ -38,14 +38,18 @@
 (require 'color-theme)
 (color-theme-initialize)
 ;; (color-theme-djcb-dark)
-(color-theme-starlight)
+;; (color-theme-starlight)
+(color-theme-molokai)
 
 ;; (when (window-system)       (color-theme-starlight))
 ;; (when (not (window-system)) (color-theme-midnight))
 
 ;;;;
-;; marmalade for packages
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; emacs package sources
+(add-to-list 'package-archives
+             '(("ELPA" . "http://tromey.com/elpa/")
+               '("gnu" . "http://elpa.gnu.org/packages/")
+               '("marmalade" . "http://marmalade-repo.org/packages/")))
 
 ;;;;
 ;; email settings

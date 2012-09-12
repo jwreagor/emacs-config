@@ -102,8 +102,6 @@
 (if (file-exists-p user-specific-config)
     (load user-specific-config))
 
- ;; '(default ((t (:stipple nil :background "#eeeeee" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Menlo"))))
-
 ;;;;
 ;; customize settings
 ;;
@@ -173,7 +171,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :foreground "default" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "default" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
  '(rainbow-delimiters-depth-3-face ((((background dark)) (:foreground "#458adc"))))
