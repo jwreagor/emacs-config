@@ -43,7 +43,6 @@
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
-(add-to-list 'load-path (concat vendor-dir "/coffee-mode"))
 (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
 (add-to-list 'load-path (concat vendor-dir "/scala"))
 (add-to-list 'load-path (concat vendor-dir "/jade-mode"))
