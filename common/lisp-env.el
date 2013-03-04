@@ -31,6 +31,10 @@
                                   (paredit-mode +1)
                                   (rainbow-delimiters-mode)))
 
+(add-hook 'clojure-mode-hook (lambda ()
+                               (paredit-mode +1)
+                               (rainbow-delimiters-mode)))
+
 (require 'lisp-helpers)
 
 (provide 'lisp-env)
