@@ -9,7 +9,7 @@
 (require 'rainbow-mode)
 (require 'textmate)
 ;;(require 'jekyll)
-(require 'scala-mode-auto)
+;;(require 'scala-mode-auto)
 (require 'gist)
 (textmate-mode)
 
@@ -69,6 +69,7 @@
 (add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
 (add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
+(add-hook 'clojure-mode               (lambda () (enable-paredit-mode)))
 
 (require 'sws-mode)
 (require 'jade-mode)
@@ -77,7 +78,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 
-(require 'nu)
+;;(require 'nu)
 
 ;;;;
 ;; coffee-script
@@ -107,21 +108,14 @@
 (setq ibuffer-saved-filter-groups
       '(("defaults"
          ("cocoa" (filename . "\\Cocoa"))
-         ("tj" (filename . "\\tj"))
-         ("el" (filename . "\\elocal.*"))
-         ("opinion-trac" (filename . "\\opinion-trac"))
-         ("mhh" (filename . "\\mhh"))
          ("conhar" (filename . "\\conhar"))
-         ("cardboard" (filename . "\\cardboard"))
-         ("crimescheme" (filename . "\\cheapRoc\.github\.com"))
-	 ("conf" (or (filename . "\.emacs\.d")
+         ("conf" (or (filename . "\.emacs\.d")
                      (filename . "emacs-config")))
-	 ("org" (or (mode . org-mode)
-		    (filename . "OrgMode")))
-	 ("irc" (mode . erc-mode))
-         ("emacs" (or
-                 (name . "^\\*scratch\\*$")
-                 (name . "^\\*Messages\\*$")))
+         ("org" (or (mode . org-mode)
+                    (filename . "OrgMode")))
+         ("irc" (mode . erc-mode))
+         ("emacs" (or (name . "^\\*scratch\\*$")
+                      (name . "^\\*Messages\\*$")))
          ("db" (or (name . "\\*SQL\\*")
                    (filename . "\*sql\*")))
 	 ("help" (or (name . "\*Help\*")
@@ -145,7 +139,7 @@
 (yas/global-mode)
 (yas/initialize)
 
-(hl-line-mode)
+;;(hl-line-mode)
 
 (provide 'modes)
 ;;; modes.el eof
