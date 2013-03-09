@@ -78,6 +78,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 
+(global-ws-trim-mode t)
+(set-default 'ws-trim-level 2)
+(setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))
+
 ;;(require 'nu)
 
 ;;;;
@@ -118,16 +122,16 @@
                       (name . "^\\*Messages\\*$")))
          ("db" (or (name . "\\*SQL\\*")
                    (filename . "\*sql\*")))
-	 ("help" (or (name . "\*Help\*")
-		     (name . "\*Apropos\*")
-		     (name . "\*info\*"))))))
+     ("help" (or (name . "\*Help\*")
+             (name . "\*Apropos\*")
+             (name . "\*info\*"))))))
 
-(add-hook 'ibuffer-mode-hook 
-	  '(lambda ()
+(add-hook 'ibuffer-mode-hook
+      '(lambda ()
              (ibuffer-auto-mode 1)
              (setq ibuffer-expert 1)
              (setq ibuffer-show-empty-filter-groups nil)
-	     (ibuffer-switch-to-saved-filter-groups "defaults")))
+         (ibuffer-switch-to-saved-filter-groups "defaults")))
 
 ;;;;
 ;; yasnippet
