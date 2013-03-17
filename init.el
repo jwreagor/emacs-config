@@ -18,12 +18,6 @@
 (if (file-exists-p "/usr/local/bin")
     (setq local-bin "/usr/local/bin"))
 
-(if (file-exists-p "/opt/local/bin")
-    (setq port-bin "/opt/local/bin"))
-
-(if (file-exists-p "/opt/local/lib/mysql5/bin")
-    (setq mysql-bin "/opt/local/lib/mysql5/bin"))
-
 (if (file-exists-p erlang-dir)
     (progn
       (setq erlang-bin (concat erlang-dir "/bin"))
@@ -89,7 +83,6 @@
 (require 'lisp-env)
 (require 'org-env)
 (require 'js-env)
-(require 'peepopen)
 
 ;;;;
 ;; user/system specific
