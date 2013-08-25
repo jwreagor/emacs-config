@@ -87,7 +87,6 @@
 (require 'lisp-env)
 (require 'org-env)
 (require 'js-env)
-(require 'peepopen)
 
 ;;;;
 ;; user/system specific
@@ -125,10 +124,10 @@
  '(erc-kill-server-buffer-on-quit t)
  '(erc-nick "cheapRoc")
  '(erc-prompt ">")
- '(erc-user-full-name "justinwr")
+ '(erc-user-full-name "Justin Reagor")
  '(eshell-kill-on-exit t)
  '(eshell-scroll-to-bottom-on-input nil)
- '(eshell-term-name "xterm-color")
+ '(eshell-term-name "screen-256color")
  '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
  '(ffap-dired-wildcards "[*?][^/]*\\'")
  '(file-name-at-point-functions nil)
