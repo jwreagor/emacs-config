@@ -37,7 +37,6 @@
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path packages-dir)
-(add-to-list 'load-path (concat vendor-dir "/yasnippet"))
 (add-to-list 'load-path (concat vendor-dir "/rainbow-mode"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))

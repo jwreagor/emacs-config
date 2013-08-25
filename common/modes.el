@@ -141,11 +141,11 @@
 ;; yasnippet
 ;;
 
-(require 'yasnippet)
-(setq yas/root-directory (concat dotfiles-dir "snippets"))
-(yas/load-directory yas/root-directory)
-(yas/global-mode)
-(yas/initialize)
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'yasnippet)
+            (yas-load-directory (concat dotfiles-dir "snippets"))
+            (yas-global-mode)))
 
 ;;(hl-line-mode)
 
