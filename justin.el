@@ -35,14 +35,20 @@
 ;; color themes
 ;;
 
-(require 'color-theme)
-(color-theme-initialize)
-;; (color-theme-djcb-dark)
-;; (color-theme-starlight)
-(color-theme-molokai)
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'color-theme)
+            (color-theme-initialize)
 
-;; (when (window-system)       (color-theme-starlight))
-;; (when (not (window-system)) (color-theme-midnight))
+            ;; (color-theme-djcb-dark)
+            ;; (color-theme-starlight)
+            (color-theme-molokai)
+
+            ;; (when (window-system)       (color-theme-starlight))
+            ;; (when (not (window-system)) (color-theme-midnight))
+
+            ))
+
 
 ;;;;
 ;; emacs package sources

@@ -18,11 +18,11 @@
 ;;
 
 (if (boundp 'erlang-tools)
-    (progn
-      (autoload 'erlang-mode "erlang.el" "" t)
-      (autoload 'elixir-mode "elixir-mode.el" "" t)
-      (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
-      (add-to-list 'auto-mode-alist  '("\\.exs?$" . elixir-mode))))
+    '(progn
+       (autoload 'erlang-mode "erlang.el" "" t)
+       (autoload 'elixir-mode "elixir-mode.el" "" t)
+       (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+       (add-to-list 'auto-mode-alist  '("\\.exs?$" . elixir-mode))))
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 
@@ -80,9 +80,11 @@
 
 (add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 
-(global-ws-trim-mode t)
-(set-default 'ws-trim-level 2)
-(setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))
+(add-hook 'after-init-hook
+          (lambda ()
+             (global-ws-trim-mode t)
+             (set-default 'ws-trim-level 2)
+             (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
 
 ;;(require 'nu)
 
