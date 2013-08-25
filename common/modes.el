@@ -6,10 +6,8 @@
 ;;
 
 (require 'magit)
-(require 'rainbow-mode)
 (require 'textmate)
-;;(require 'jekyll)
-;;(require 'scala-mode-auto)
+(require 'rainbow-mode)
 (require 'gist)
 (textmate-mode)
 
@@ -82,9 +80,9 @@
 
 (add-hook 'after-init-hook
           (lambda ()
-             (global-ws-trim-mode t)
-             (set-default 'ws-trim-level 2)
-             (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
+            (global-ws-trim-mode t)
+            (set-default 'ws-trim-level 2)
+            (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
 
 ;;(require 'nu)
 
