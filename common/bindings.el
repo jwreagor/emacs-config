@@ -133,10 +133,10 @@
 ;;
 (global-set-key (kbd "C-c b n") 'jekyll-draft-post)
 (global-set-key (kbd "C-c b P") 'jekyll-publish-post)
-(global-set-key (kbd "C-c b p") (lambda () 
+(global-set-key (kbd "C-c b p") (lambda ()
                                   (interactive)
                                   (find-file "/Users/justin/Development/cheapRoc.github.com/_posts/")))
-(global-set-key (kbd "C-c b d") (lambda () 
+(global-set-key (kbd "C-c b d") (lambda ()
                                   (interactive)
                                   (find-file "/Users/justin/Development/cheapRoc.github.com/_drafts/")))
 

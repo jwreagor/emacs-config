@@ -20,7 +20,9 @@
 (if (boundp 'erlang-tools)
     (progn
       (autoload 'erlang-mode "erlang.el" "" t)
-      (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))))
+      (autoload 'elixir-mode "elixir-mode.el" "" t)
+      (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+      (add-to-list 'auto-mode-alist  '("\\.exs?$" . elixir-mode))))
 
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
 
