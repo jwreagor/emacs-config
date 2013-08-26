@@ -15,13 +15,13 @@
 (autoload 'ruby-compilation-minor-mode "ruby-compilation" "" t)
 ;; (autoload 'rinari-minor-mode "rinari" "" t)
 
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Guardfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Thorfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(setq ruby-file-types ["\\.rake$"
+                       "\\.gemspec$"
+                       "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\)file"])
+
+(mapcar (lambda (str)
+   (add-to-list 'auto-mode-alist `(,str . ruby-mode)))
+ ruby-file-types)
 
 ;;;;
 ;; ruby/rspec-mode hooks
@@ -39,7 +39,7 @@
 
 (add-hook 'rspec-mode-hook
           '(lambda ()
-             (setq yas/mode-symbol 'rspec-mode))) 
+             (setq yas-extra-modes 'rspec-mode)))
 
 ;;;;
 ;; never edit compiled rubinius bytecode
