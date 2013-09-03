@@ -5,29 +5,21 @@
 ;; system locations
 ;;
 
-;; TODO: Move to defining everything based on the host env. (getenv "ERLANGPATH")
-
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
       system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
       vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
-      packages-dir (concat dotfiles-dir "packages")
-      erlang-dir "/usr/local/Cellar/erlang/R14B03")
+      themes-dir (concat dotfiles-dir "themes")
+      erlang-dir (or (getenv "ERLANG_PATH") "/usr/local/opt/erlang"))
 
 (if (file-exists-p "/usr/local/bin")
     (setq local-bin "/usr/local/bin"))
 
-(if (file-exists-p "/opt/local/bin")
-    (setq port-bin "/opt/local/bin"))
-
-(if (file-exists-p "/opt/local/lib/mysql5/bin")
-    (setq mysql-bin "/opt/local/lib/mysql5/bin"))
-
 (if (file-exists-p erlang-dir)
     (progn
       (setq erlang-bin (concat erlang-dir "/bin"))
-      (setq erlang-tools (concat erlang-dir "/lib/erlang/lib/tools-2.6.6.4/emacs"))))
+      (setq erlang-tools (concat erlang-dir "/lib/erlang/lib/tools-2.6.8/emacs"))))
 
 ;;;;
 ;; build load/exec-path
@@ -36,7 +28,7 @@
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
-(add-to-list 'load-path packages-dir)
+(add-to-list 'load-path themes-dir)
 (add-to-list 'load-path (concat vendor-dir "/rainbow-mode"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
@@ -54,9 +46,6 @@
 (if (boundp 'local-bin)
     (add-to-list 'exec-path local-bin))
 
-(if (boundp 'port-bin)
-    (add-to-list 'exec-path port-bin))
-
 (if (boundp 'mysql-bin)
     (add-to-list 'exec-path mysql-bin))
 
@@ -67,7 +56,6 @@
 ;; static loads
 ;;
 
-(require 'package)
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)

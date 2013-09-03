@@ -5,7 +5,6 @@
 ;; minor
 ;;
 
-(require 'magit)
 (require 'textmate)
 (require 'rainbow-mode)
 (require 'gist)

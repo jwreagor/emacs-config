@@ -131,6 +131,10 @@
 ;; Buffers
 ;;
 
+(defun save-and-load ()
+  "Save the current buffer then load it into Emacs"
+  (interactive) (save-buffer) (load-buffer))
+
 (defun load-buffer ()
   "Loads the current buffer into Emacs ala load-file"
   (interactive)

@@ -36,12 +36,16 @@
 ;; color themes
 ;;
 
+(setq custom-theme-load-path (quote ()))
+
 (add-hook 'after-init-hook
           (lambda ()
             (require 'color-theme)
+            (require 'lizylee-theme)
             (color-theme-initialize)
-            (when (window-system) (color-theme-molokai))
-            (when (not (window-system)) (color-theme-molokai))))
+            ;; (when (window-system) (lizylee))
+            ;; (when (not (window-system)) (color-theme-molokai))
+            ))
 
 ;;;;
 ;; emacs package sources
