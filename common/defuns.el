@@ -131,6 +131,15 @@
 ;; Buffers
 ;;
 
+(defun save-and-load ()
+  "Save the current buffer then load it into Emacs"
+  (interactive) (save-buffer) (load-buffer))
+
+(defun load-buffer ()
+  "Loads the current buffer into Emacs ala load-file"
+  (interactive)
+  (load-file (expand-file-name (buffer-file-name))))
+
 (defun open-current-buffer (&optional app)
  "Open current buffer in some APP on OS X."
  (interactive)
@@ -146,7 +155,7 @@
   (let* ((list (buffer-list))
          (buffer (car list)))
     (while buffer
-      (when (and (buffer-file-name buffer) 
+      (when (and (buffer-file-name buffer)
                  (not (buffer-modified-p buffer)))
         (set-buffer buffer)
         (revert-buffer t t t))
@@ -273,7 +282,6 @@
     (if (get-buffer buffer)
         (switch-to-buffer buffer)
       (funcall function))))
-
 
 (provide 'defuns)
 
