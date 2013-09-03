@@ -42,10 +42,7 @@
           (lambda ()
             (require 'color-theme)
             (require 'lizylee-theme)
-            (color-theme-initialize)
-            ;; (when (window-system) (lizylee))
-            ;; (when (not (window-system)) (color-theme-molokai))
-            ))
+            (color-theme-initialize)))
 
 ;;;;
 ;; emacs package sources
