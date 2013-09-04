@@ -4,6 +4,13 @@
 ;;(add-to-list 'load-path (concat common-dir "/ruby-env"))
 
 ;;;;
+;; rbenv
+;;
+
+(global-rbenv-mode)
+(rbenv-use-global)
+
+;;;;
 ;; autoloads for libraries
 ;;
 
@@ -29,7 +36,7 @@
 
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
-(setq enh-ruby-program (getenv "ENH_RUBY"))
+(setq enh-ruby-program rbenv-ruby-shim)
 
 (add-hook 'enh-ruby-mode-hook
           '(lambda ()
