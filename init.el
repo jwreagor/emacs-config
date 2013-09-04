@@ -71,10 +71,14 @@
 (require 'misc)
 (require 'registers)
 (require 'eshell-defaults)
-(require 'ruby-env)
+
 (require 'lisp-env)
 (require 'org-env)
 (require 'js-env)
+
+(add-hook 'after-init-hook
+          '(lambda ()
+             (require 'ruby-env)))
 
 ;;;;
 ;; user/system specific
@@ -100,8 +104,6 @@
  '(coffee-tab-width 2)
  '(column-number-mode t)
  '(dired-at-point-require-prefix nil)
- '(display-battery-mode t)
- '(display-time-mode t)
  '(erc-email-userid "justin")
  '(erc-header-line-face-method nil)
  '(erc-hide-prompt t)

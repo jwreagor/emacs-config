@@ -5,7 +5,6 @@
 
 (prefer-coding-system 'utf-8)
 
-(toggle-scroll-bar 0)
 (menu-bar-mode 0)
 (display-time-mode 0)
 
@@ -19,13 +18,6 @@
 (setq-default kill-read-only-ok t)
 
 ;;;;
-;; display time and battery life
-;;
-
-(display-time-mode)
-(display-battery-mode)
-
-;;;;
 ;; major and minor modes
 ;;
 
@@ -33,7 +25,7 @@
 (require 'mail)
 
 ;;;;
-;; color themes
+;; color theme
 ;;
 
 (setq custom-theme-load-path (quote ()))
@@ -46,7 +38,9 @@
 
 ;;;;
 ;; emacs package sources
-(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")))
+
+(setq package-archives '(("melpa" .
+                          "http://melpa.milkbox.net/packages/")))
 
 (provide 'justin)
 ;; justin.el eof

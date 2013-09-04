@@ -11,7 +11,7 @@
 
 (custom-theme-set-faces
   'lizylee
-        '(default ((t (:background "#202020" :foreground "#e2e2e5"))))
+        '(default ((t (:background "#000000" :foreground "#e2e2e5"))))
         '(font-lock-builtin-face ((t (:foreground "#808080"))))
         '(region ((t (:background "#303030" :foreground "#afafff"))))
         '(highlight ((t (:background "#303030"))))

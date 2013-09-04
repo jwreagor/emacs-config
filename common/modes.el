@@ -139,10 +139,10 @@
 ;;
 
 (add-hook 'after-init-hook
-          (lambda ()
-            (require 'yasnippet)
-            (yas-load-directory (concat dotfiles-dir "snippets"))
-            (yas-global-mode)))
+          '(lambda ()
+             (require 'yasnippet)
+             (yas-load-directory (concat dotfiles-dir "snippets"))
+             (yas-global-mode)))
 
 ;;(hl-line-mode)
 
