@@ -71,7 +71,8 @@
     '(gnus-header-from ((t (:foreground "#f0e16a"))))
     '(gnus-header-name ((t (:foreground "#ff9800"))))
     '(gnus-header-subject ((t (:foreground "#ff8800"))))
-    '(slime-repl-inputed-output-face ((t (:foreground "#ff9800")))))
+    '(slime-repl-inputed-output-face ((t (:foreground "#ff9800"))))
+    '(enh-ruby-op-face ((t (:bold t :foreground "#A0A0A0")))))
 
 ;;;###autoload
 (when load-file-name
