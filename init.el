@@ -128,6 +128,7 @@
  '(ido-mode (quote both) nil (ido))
  '(ido-use-filename-at-point nil)
  '(indent-tabs-mode nil)
+ '(js-indent-level 2)
  '(js2-missing-semi-one-line-override t)
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 1)
@@ -157,7 +158,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "default" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default"))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
  '(rainbow-delimiters-depth-3-face ((((background dark)) (:foreground "#458adc"))))
