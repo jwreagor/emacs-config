@@ -19,7 +19,8 @@
 (if (file-exists-p erlang-dir)
     (progn
       (setq erlang-bin (concat erlang-dir "/bin"))
-      (setq erlang-tools (concat erlang-dir "/lib/erlang/lib/tools-2.6.8/emacs"))))
+      (setq erlang-tools (car (file-expand-wildcards
+                          (concat erlang-dir "/lib/erlang/lib/tools-*/emacs"))))))
 
 ;;;;
 ;; build load/exec-path
