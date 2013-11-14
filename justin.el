@@ -10,6 +10,7 @@
 
 (setq show-trailing-whitespace "t")
 (setq ns-pop-up-frames nil)
+(setq-default fill-column 80)
 
 ;;;;
 ;; copy line req.
