@@ -146,6 +146,7 @@
  '(ido-mode (quote both) nil (ido))
  '(ido-use-filename-at-point nil)
  '(indent-tabs-mode nil)
+ '(js-indent-level 2)
  '(js2-missing-semi-one-line-override t)
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 1)
