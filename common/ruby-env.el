@@ -42,10 +42,12 @@
           '(lambda ()
             (require 'ruby-compilation)
             (ruby-electric-mode t)
-            (inf-ruby-setup-keybindings)
+            (inf-ruby-minor-mode)
             (local-set-key (kbd "C-c h r") 'ri)
             (local-set-key (kbd "TAB") nil)))
 
+
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 (add-hook 'rspec-mode-hook
           '(lambda ()

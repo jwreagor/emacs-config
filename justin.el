@@ -5,7 +5,7 @@
 
 (prefer-coding-system 'utf-8)
 
-(menu-bar-mode 0)
+;;(menu-bar-mode)
 (display-time-mode 0)
 
 (setq show-trailing-whitespace "t")
