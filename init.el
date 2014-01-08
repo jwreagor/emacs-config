@@ -158,6 +158,7 @@
  '(ns-control-modifier (quote control))
  '(ns-function-modifier (quote none))
  '(ns-use-qd-smoothing nil)
+ '(rust-indent-offset 2)
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(speedbar-vc-do-check nil)
