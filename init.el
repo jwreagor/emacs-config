@@ -74,6 +74,7 @@
 (require 'eshell-defaults)
 
 (require 'lisp-env)
+(require 'scheme-env)
 (require 'org-env)
 (require 'js-env)
 
