@@ -24,7 +24,7 @@
 (setq ruby-file-types ["\\.rb$"
                        "\\.rake$"
                        "\\.gemspec$"
-                       "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\)file"])
+                       "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Chef\\)file"])
 
 (mapcar (lambda (str)
    (add-to-list 'auto-mode-alist `(,str . enh-ruby-mode)))

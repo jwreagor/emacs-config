@@ -2,10 +2,11 @@
 ;;
 
 (server-start)
-
 (prefer-coding-system 'utf-8)
+
 (menu-bar-mode -1)
 (display-time-mode 0)
+(desktop-save-mode 1)
 (auto-compression-mode t)
 (recentf-mode 1)
 (show-paren-mode 1)

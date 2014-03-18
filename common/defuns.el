@@ -28,7 +28,7 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-cut-function   'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
 
 (defun copy-line (&optional arg)
@@ -226,6 +226,42 @@
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
     (when file
       (find-file file))))
+
+;;
+;; Number handling
+;;
+
+;; TODO: DRY and handle increasing negative numbers
+
+(defun increment-number-at-point ()
+  (interactive)
+  (skip-chars-backward "0123456789")
+  (or (looking-at "[0123456789]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+(defun increment-number-by (num)
+  (interactive "\BIncrease by: ")
+  (let ((num (string-to-number num)))
+    (skip-chars-backward "0123456789")
+    (or (looking-at "[0123456789]+")
+        (error "No number at point"))
+    (replace-match (number-to-string (+ num (string-to-number (match-string 0)))))))
+
+(defun decrement-number-at-point ()
+  (interactive)
+  (skip-chars-backward "0123456789")
+  (or (looking-at "[0123456789]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
+
+(defun decrement-number-by (num)
+  (interactive "\BIncrease by: ")
+  (let ((num (string-to-number num)))
+    (skip-chars-backward "0123456789")
+    (or (looking-at "[0123456789]+")
+        (error "No number at point"))
+    (replace-match (number-to-string (- (string-to-number (match-string 0)) num)))))
 
 ;;
 ;; Cosmetic

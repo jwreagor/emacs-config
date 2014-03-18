@@ -9,8 +9,8 @@
 (global-set-key (kbd "C-u")           'copy-region-as-kill)
 (global-set-key (kbd "C-c C-c")       'comment-region)
 (global-set-key (kbd "C-c C-v")       'uncomment-region)
-(global-set-key (kbd "C-c C-d")       'downcase-region)
-(global-set-key (kbd "C-c c-u")       'upcase-region)
+(global-set-key (kbd "C-c M-D")       'downcase-region)
+(global-set-key (kbd "C-c M-U")       'upcase-region)
 (global-set-key (kbd "M-C-u")         'copy-to-osx)
 (global-set-key (kbd "M-C-y")         'paste-from-osx)
 (global-set-key (kbd "C-k")           'nuke-line)
@@ -23,6 +23,10 @@
 ;; insert
 ;;
 (global-set-key (kbd "C-0") (lambda () (interactive) (insert " ")))
+(global-set-key (kbd "C-c +")   'increment-number-at-point)
+(global-set-key (kbd "C-c c +") 'increment-number-by)
+(global-set-key (kbd "C-c -")   'decrement-number-at-point)
+(global-set-key (kbd "C-c c -") 'decrement-number-by)
 
 ;;;;
 ;; misc
@@ -109,9 +113,9 @@
 ;;;;
 ;; lisp
 ;;
-(define-key read-expression-map (kbd "TAB") 'lisp-complete-symbol)
-(define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
-(define-key lisp-mode-shared-map (kbd "C-\\") 'lisp-complete-symbol)
+(define-key read-expression-map  (kbd "TAB")   'lisp-complete-symbol)
+(define-key lisp-mode-shared-map (kbd "RET")   'reindent-then-newline-and-indent)
+(define-key lisp-mode-shared-map (kbd "C-\\")  'lisp-complete-symbol)
 (define-key lisp-mode-shared-map (kbd "C-c s") 'my-eval-and-replace)
 (define-key lisp-mode-shared-map (kbd "C-c v") 'eval-buffer)
 
@@ -127,19 +131,6 @@
 ;;
 (global-set-key (kbd "C-h a") 'apropos)
 (global-set-key (kbd "C-h c") 'cheat)
-
-;;;;
-;; jekyll
-;;
-(global-set-key (kbd "C-c b n") 'jekyll-draft-post)
-(global-set-key (kbd "C-c b P") 'jekyll-publish-post)
-(global-set-key (kbd "C-c b p") (lambda ()
-                                  (interactive)
-                                  (find-file "/Users/justin/Development/cheapRoc.github.com/_posts/")))
-(global-set-key (kbd "C-c b d") (lambda ()
-                                  (interactive)
-                                  (find-file "/Users/justin/Development/cheapRoc.github.com/_drafts/")))
-
 
 (provide 'bindings)
 ;;; bindings.el eof

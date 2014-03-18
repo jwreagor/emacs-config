@@ -10,6 +10,8 @@
 (require 'gist)
 (textmate-mode)
 
+;;(require 'nu)
+
 ;;;;
 ;; major - autoloads
 ;;
@@ -67,11 +69,6 @@
 
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       (lambda () (paredit-mode +1)))
-(add-hook 'lisp-mode-hook             (lambda () (paredit-mode +1)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
-(add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
-(add-hook 'clojure-mode               (lambda () (enable-paredit-mode)))
 
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -99,30 +96,41 @@
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
 
-;;(require 'nu)
-
 ;;;;
 ;; coffee-script
 ;;
 
 (defun coffee-custom ()
   "coffee-mode-hook"
-  (set (make-local-variable 'tab-width) 2))
+  )
 
 (add-hook 'coffee-mode-hook
-          '(lambda() (coffee-custom)))
+          (lambda() (set (make-local-variable 'tab-width) 2)))
+
+
+;;;;
+;; fucking batch files
+;;
+
+(add-hook 'sh-mode-hook
+          (lambda ()
+            (interactive)
+            (setq sh-basic-offset 2
+                  sh-indentation 2)))
 
 ;;;;
 ;; ack-and-a-half
 ;;
-(defalias 'ack 'ack-and-a-half)
-(defalias 'ack-same 'ack-and-a-half-same)
-(defalias 'ack-find-file 'ack-and-a-half-find-file)
+(defalias 'ack                'ack-and-a-half)
+(defalias 'ack-same           'ack-and-a-half-same)
+(defalias 'ack-find-file      'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 ;;;;
 ;; ibuffer
 ;;
+
+(message (split-string (buffer-file-name) (path-separator)))
 
 (require 'ibuffer)
 
