@@ -39,14 +39,14 @@
 (autoload 'yaml-mode "yaml-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
-(autoload 'js2-mode "js2" "" t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.j$" . objc-mode))
+(autoload 'js-mode "js" "" t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
 (add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.h$" . objc-mode))
 
-(autoload 'espresso-mode "espresso")
+(autoload 'handlebars-mode "handlebars-mode")
+(add-to-list 'auto-mode-alist '("\\.(hbs|handlebars)$" . handlebars-mode))
 
 (autoload 'coffee-mode "coffee-mode")
 (add-to-list 'auto-mode-alist '("\\.coffee\..*$" . coffee-mode))
@@ -70,8 +70,8 @@
 (add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
 (add-hook 'clojure-mode               (lambda () (enable-paredit-mode)))
 
-(require 'sws-mode)
-(require 'jade-mode)
+(autoload 'sws-mode "sws-mode" "" t)
+(autoload 'jade-mode "jade-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 

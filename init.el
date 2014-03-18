@@ -30,6 +30,7 @@
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path themes-dir)
+(add-to-list 'load-path erlang-tools)
 (add-to-list 'load-path (concat vendor-dir "/rainbow-mode"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
 (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
@@ -37,7 +38,6 @@
 (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
 (add-to-list 'load-path (concat vendor-dir "/scala"))
 (add-to-list 'load-path (concat vendor-dir "/jade-mode"))
-(add-to-list 'load-path erlang-tools)
 (add-to-list 'load-path (concat vendor-dir "/nu-mode"))
 
 ;;;;
