@@ -30,12 +30,6 @@
 (autoload 'feature-mode "feature-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.feature$" . feature-mode))
 
-(autoload 'haml-mode "haml-mode" "" t)
-(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
-
-(autoload 'sass-mode "sass-mode" "" t)
-(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-
 (autoload 'yaml-mode "yaml-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
 
@@ -45,16 +39,25 @@
 (add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.h$" . objc-mode))
 
+(autoload 'haml-mode "haml-mode" "" t)
+(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
+
+(autoload 'sass-mode "sass-mode" "" t)
+(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
+
+(autoload 'sws-mode "sws-mode" "" t)
+(autoload 'jade-mode "jade-mode" "" t)
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+
 (autoload 'handlebars-mode "handlebars-mode")
 (add-to-list 'auto-mode-alist '("\\.(hbs|handlebars)$" . handlebars-mode))
 
 (autoload 'coffee-mode "coffee-mode")
 (add-to-list 'auto-mode-alist '("\\.coffee\..*$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-(add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
@@ -70,18 +73,31 @@
 (add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
 (add-hook 'clojure-mode               (lambda () (enable-paredit-mode)))
 
-(autoload 'sws-mode "sws-mode" "" t)
-(autoload 'jade-mode "jade-mode" "" t)
-(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
-(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
-
+;;
+;; ws-trim setup
+;;
 (add-hook 'after-init-hook
           (lambda ()
             (global-ws-trim-mode t)
             (set-default 'ws-trim-level 2)
             (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
+
+;;
+;; cosmetics for diffs and magit
+;;
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green3")
+     (set-face-foreground 'magit-diff-del "red3")))
 
 ;;(require 'nu)
 

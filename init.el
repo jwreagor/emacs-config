@@ -68,8 +68,7 @@
 (require 'lisp-helpers)
 (require 'defuns)
 (require 'bindings)
-(require 'mac-bindings)
-(require 'misc)
+;; (require 'misc)
 (require 'registers)
 (require 'eshell-defaults)
 
@@ -152,7 +151,6 @@
  '(js2-strict-missing-semi-warning nil)
  '(line-spacing 1)
  '(longlines-auto-wrap nil)
- '(menu-bar-mode t)
  '(ns-alternate-modifier (quote meta))
  '(ns-antialias-text t)
  '(ns-command-modifier (quote super))
@@ -193,9 +191,3 @@
  '(trailing-whitespace ((t nil)))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
-
-(put 'upcase-region 'disabled nil)
-
-(put 'downcase-region 'disabled nil)
-
-(put 'narrow-to-region 'disabled nil)
