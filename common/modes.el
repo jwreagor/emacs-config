@@ -130,7 +130,7 @@
 ;; ibuffer
 ;;
 
-(message (split-string (buffer-file-name) (path-separator)))
+;; (message (split-string (buffer-file-name) (path-separator)))
 
 (require 'ibuffer)
 
