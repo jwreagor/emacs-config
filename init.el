@@ -189,6 +189,8 @@
  '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "#ffd850"))))
  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "#ff8e50"))))
  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "#fb4f56"))))
+ '(tool-bar ((t (:box (:line-width 1 :style released-button)))))
  '(trailing-whitespace ((t nil)))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
+(put 'upcase-region 'disabled nil)

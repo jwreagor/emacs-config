@@ -46,12 +46,12 @@
 
 (autoload 'sass-mode "sass-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
 
 (autoload 'sws-mode "sws-mode" "" t)
 (autoload 'jade-mode "jade-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-(add-to-list 'auto-mode-alist '("\\.scss$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 
 (autoload 'handlebars-mode "handlebars-mode")
@@ -109,6 +109,15 @@
 
 
 ;;;;
+;; markdown
+;;
+
+(setq markdown-mode-hook
+      '(lambda()
+         (setq markdown-command "kramdown --enable-coderay")))
+
+
+;;;;
 ;; fucking batch files
 ;;
 
@@ -162,10 +171,29 @@
 ;; yasnippet
 ;;
 
+;; "find or create snippets directory for currently loaded yassnipets under elpa, call with yas-load-directory"
+
+;; "Find most recent yasnippet directory"
+
+;; "Generate list of all yasnippet dirs"
+
+;; "Iterate each and find most recent"
+
+;; (defun modes/yasnippets-elpa-dirs ()
+;;   (let ((yas-elpa-wildcard
+;;          (concat (locate-user-emacs-file "elpa") "/yasnippet-20*")))
+;;     (car (prune-directory-list
+;;           (file-expand-wildcards yas-elpa-wildcard)))))
+
+;; (defun modes/yasnippets-elpa-recent (yas-elpa-dirs)
+;;   (let*))
+
+;; (message (progn (modes/yasnippets-elpa-dirs)))
+
 (add-hook 'after-init-hook
           '(lambda ()
              (require 'yasnippet)
-             (yas-load-directory (concat dotfiles-dir "snippets"))
+             ;; (yas-load-directory (concat dotfiles-dir "snippets"))
              (yas-global-mode)))
 
 ;;(hl-line-mode)

@@ -7,11 +7,13 @@
 ;; original busybee theme by Patrick Anderson
 ;;(http://www.vim.org/scripts/script.php?script_id=2549)
 
+;; modified for use by cheapRoc
+
 (deftheme lizylee)
 
 (custom-theme-set-faces
  'lizylee
- '(default ((t (:background "#000000" :foreground "#e2e2e5"))))
+ '(default ((t (:background nil :foreground "#e2e2e5"))))
  '(font-lock-builtin-face ((t (:foreground "#808080"))))
  '(region ((t (:background "#303030" :foreground "#afafff"))))
  '(highlight ((t (:background "#303030"))))
@@ -41,7 +43,7 @@
  '(org-hide ((t (:foreground "#708090"))))
  '(org-level-1 ((t (:bold t :foreground "#808080"))))
  '(org-level-2 ((t (:bold nil :foreground "#7e8aa2"))))
- '(org-level-3 ((t (:bold t :foreground "#df9f2d"))))
+ '(org-level-3 ((t (:bold t :foreground "#e2e2e2"))))
  '(org-level-4 ((t (:bold nil :foreground "#af4f4b"))))
  '(org-date ((t (:underline t :foreground "#f0ad6d") :height 1.1)))
  '(org-footnote  ((t (:underline t :foreground "#ad600b"))))

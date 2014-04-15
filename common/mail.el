@@ -8,12 +8,13 @@
 
 (setq send-mail-function 'smtpmail-send-it
       message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 25 "jreagor@chariotsolutions.com" nil))
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 25
+                                       (or (getenv "CHARIOT_EMAIL") "") nil))
       smtpmail-auth-credentials (expand-file-name "~/.authinfo")
       smtpmail-default-smtp-server "smtp.gmail.com"
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 25
-      smtpmail-local-domain "chariotsolutions.com"
+      smtpmail-local-domain (or (getenv "CHARIOT_DOMAIN") "")
       smtpmail-debug-info t)
 (require 'smtpmail)
 

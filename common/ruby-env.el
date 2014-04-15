@@ -48,7 +48,7 @@
 
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
-
+(add-hook 'enh-ruby-mode-hook 'minitest-mode)
 (add-hook 'rspec-mode-hook
           '(lambda ()
              (setq yas-extra-modes 'rspec-mode)))
