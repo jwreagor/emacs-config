@@ -11,6 +11,7 @@
 (recentf-mode 1)
 (show-paren-mode 1)
 (random t) ;; RNG seed
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (set-default 'indent-tabs-mode nil)
 (setq-default fill-column 80
