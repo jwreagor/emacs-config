@@ -1,3 +1,4 @@
+.emacs.desktop*
 backups
 auto-save-list
 tramp
