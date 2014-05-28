@@ -6,7 +6,6 @@
 ;;
 
 (require 'textmate)
-(require 'rainbow-mode)
 (require 'gist)
 (textmate-mode)
 
@@ -79,6 +78,7 @@
 ;;
 (add-hook 'after-init-hook
           (lambda ()
+            (require 'rainbow-mode)
             (global-ws-trim-mode t)
             (set-default 'ws-trim-level 2)
             (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
@@ -100,20 +100,16 @@
 ;; coffee-script
 ;;
 
-(defun coffee-custom ()
-  "coffee-mode-hook"
-  )
-
 (add-hook 'coffee-mode-hook
-          (lambda() (set (make-local-variable 'tab-width) 2)))
-
+          '(lambda ()
+             (set (make-local-variable 'tab-width) 2)))
 
 ;;;;
 ;; markdown
 ;;
 
 (setq markdown-mode-hook
-      '(lambda()
+      '(lambda ()
          (setq markdown-command "kramdown --enable-coderay")))
 
 
