@@ -77,19 +77,19 @@
 ;; color theme
 ;;
 
-(setq custom-theme-load-path (quote ()))
+(add-to-list 'custom-theme-load-path themes-dir)
 
 (add-hook 'after-init-hook
           (lambda ()
             (require 'color-theme)
-            (require 'lizylee-theme)
-            (color-theme-initialize)))
+            (require 'lizydee-theme)
+            (color-theme-initialize)
+            (color-theme-lizydee)))
 
 ;;;;
 ;; emacs package sources
 
-(setq package-archives '(("melpa" .
-                          "http://melpa.milkbox.net/packages/")))
+(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (provide 'justin)
 ;; justin.el eof

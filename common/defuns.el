@@ -1,7 +1,7 @@
 ;;; function defs
 ;;
 
-;;;;
+;;
 ;; navigation
 ;;
 
@@ -15,7 +15,7 @@
   (interactive "p")
   (scroll-down (or arg 1)))
 
-;;;;
+;;
 ;; native copy and paste
 ;;
 
@@ -41,7 +41,7 @@
   (kill-line arg)
   (toggle-read-only 0))
 
-;;;;
+;;
 ;; nuking
 ;;
 
@@ -82,7 +82,7 @@
     (setq x2 (point))
     (delete-region x1 x2)))
 
-;;;;
+;;
 ;; formatting
 ;;
 
@@ -104,7 +104,7 @@
       (setq s (replace-match val t nil s)))
     (downcase s)))
 
-;;;;
+;;
 ;; network
 ;;
 
@@ -202,16 +202,6 @@
            (position (cdr (assoc selected-symbol name-and-pos))))
       (goto-char position))))
 
-(defun my-coding-hook ()
-  "Enable things that are convenient across all coding buffers."
-  (set (make-local-variable 'comment-auto-fill-only-comments) t)
-  (make-local-variable 'column-number-mode)
-  (column-number-mode t)
-  (auto-fill-mode) ;; in comments only
-  (if window-system (hl-line-mode t))
-  (pretty-lambdas)
-  (idle-highlight))
-
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
@@ -288,7 +278,7 @@
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
 
-(defun my-recompile-init ()
+(defun init/recompile ()
   "Byte-compile everything in ~/.emacs.d again."
   (interactive)
   (byte-recompile-directory (expand-file-name "~/.emacs.d") 0))
@@ -310,14 +300,6 @@
           "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
           "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
           "culpa qui officia deserunt mollit anim id est laborum."))
-
-(defun switch-or-start (function buffer)
-  "If the buffer is current, bury it, otherwise invoke the function."
-  (if (equal (buffer-name (current-buffer)) buffer)
-      (bury-buffer)
-    (if (get-buffer buffer)
-        (switch-to-buffer buffer)
-      (funcall function))))
 
 (provide 'defuns)
 

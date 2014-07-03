@@ -112,7 +112,6 @@
       '(lambda ()
          (setq markdown-command "kramdown --enable-coderay")))
 
-
 ;;;;
 ;; fucking batch files
 ;;
@@ -157,11 +156,11 @@
              (name . "\*info\*"))))))
 
 (add-hook 'ibuffer-mode-hook
-      '(lambda ()
+          '(lambda ()
              (ibuffer-auto-mode 1)
              (setq ibuffer-expert 1)
              (setq ibuffer-show-empty-filter-groups nil)
-         (ibuffer-switch-to-saved-filter-groups "defaults")))
+             (ibuffer-switch-to-saved-filter-groups "defaults")))
 
 ;;;;
 ;; yasnippet

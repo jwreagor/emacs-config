@@ -67,8 +67,6 @@
 (require 'lisp-helpers)
 (require 'defuns)
 (require 'bindings)
-;; (require 'misc)
-(require 'registers)
 (require 'eshell-defaults)
 
 (require 'lisp-env)
@@ -193,3 +191,4 @@
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
  '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
