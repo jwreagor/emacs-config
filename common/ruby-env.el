@@ -23,6 +23,7 @@
 
 (setq ruby-file-types ["\\.rb$"
                        "\\.rake$"
+                       "\\.cap$"
                        "\\.gemspec$"
                        "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Chef\\)file"])
 
