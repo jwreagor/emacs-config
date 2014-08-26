@@ -110,7 +110,14 @@
 
 (setq markdown-mode-hook
       '(lambda ()
-         (setq markdown-command "kramdown --enable-coderay")))
+         ;; (setq markdown-command "kramdown --enable-coderay %s")
+         ;; (setq markdown-command-needs-filename t)
+         (defun markdown-preview-file ()
+           "run Marked on the current file and revert the buffer"
+           (interactive)
+           (async-shell-command (format "open -a \"/Applications/Marked\  2.app\" \"%s\""
+                                        (shell-quote-argument (buffer-file-name)))))
+         (global-set-key "\C-cm" 'markdown-preview-file)))
 
 ;;;;
 ;; fucking batch files
