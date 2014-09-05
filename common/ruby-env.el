@@ -1,8 +1,6 @@
 ;;; ruby environment
 ;;
 
-;;(add-to-list 'load-path (concat common-dir "/ruby-env"))
-
 ;;;;
 ;; rbenv
 ;;
