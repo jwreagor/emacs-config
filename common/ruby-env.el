@@ -5,8 +5,8 @@
 ;; rbenv
 ;;
 
-(global-rbenv-mode)
-(rbenv-use-global)
+(require 'chruby)
+(chruby "ruby-2.1.5")
 
 ;;;;
 ;; autoloads for libraries
@@ -35,7 +35,9 @@
 
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
-(setq enh-ruby-program rbenv-ruby-shim)
+(setq enh-ruby-program
+      (concat (file-name-as-directory
+               (car chruby-current-ruby-binary-path)) "ruby"))
 
 (add-hook 'enh-ruby-mode-hook
           '(lambda ()
