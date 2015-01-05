@@ -26,7 +26,6 @@
 ;; build load/exec-path
 ;;
 
-(add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path themes-dir)
