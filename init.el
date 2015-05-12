@@ -132,7 +132,9 @@
  '(eshell-kill-on-exit t)
  '(eshell-scroll-to-bottom-on-input nil)
  '(eshell-term-name "screen-256color")
- '(eshell-visual-commands (quote ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
+ '(eshell-visual-commands
+   (quote
+    ("tail" "ssh" "vi" "screen" "top" "less" "more" "lynx" "ncftp" "pine" "tin" "trn" "elm")))
  '(ffap-dired-wildcards "[*?][^/]*\\'")
  '(file-name-at-point-functions nil)
  '(fringe-mode 0 nil (fringe))
@@ -166,7 +168,10 @@
  '(tab-width 4)
  '(truncate-lines nil)
  '(truncate-partial-width-windows nil)
- '(yas/prompt-functions (quote (yas/ido-prompt yas/completing-prompt yas/x-prompt yas/dropdown-prompt yas/no-prompt))))
+ '(visible-cursor t)
+ '(yas/prompt-functions
+   (quote
+    (yas/ido-prompt yas/completing-prompt yas/x-prompt yas/dropdown-prompt yas/no-prompt))))
 
 (provide 'init)
 ;;; init.el eof
