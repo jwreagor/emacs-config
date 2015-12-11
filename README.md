@@ -1,1 +1,4 @@
-![Ass, Gas or Grass](https://dl.dropboxusercontent.com/u/5489129/gas-grass-or-ass.png)
+emacs-config
+============
+
+My preferred setup for running Emacs.
