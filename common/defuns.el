@@ -28,8 +28,10 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(setq interprogram-cut-function   'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
+(if (eq system-type 'darwin)
+    (progn
+      (setq interprogram-cut-function 'paste-to-osx)
+      (setq interprogram-paste-function 'copy-from-osx)))
 
 (defun copy-line (&optional arg)
   "Do a kill-line but copy rather than kill.  This function directly calls

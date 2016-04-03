@@ -73,12 +73,13 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-hook 'eshell-mode-hook 'ansi-color-for-comint-mode-on)
 
+(add-hook 'sql-mode-hook 'sqlup-mode)
+
 ;;
 ;; ws-trim setup
 ;;
 (add-hook 'after-init-hook
           (lambda ()
-            (require 'rainbow-mode)
             (global-ws-trim-mode t)
             (set-default 'ws-trim-level 2)
             (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))

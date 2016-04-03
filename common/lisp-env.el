@@ -5,7 +5,7 @@
 ;; slime
 ;;
 
-(load (concat dotfiles-dir "quicklisp/slime-helper.el"))
+;;(load (concat dotfiles-dir "quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "/usr/local/bin/ccl64")
 
 (add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
@@ -21,6 +21,8 @@
 (defun hooks/for-lisp-modes ()
   (rainbow-delimiters-mode)
   (paredit-mode +1))
+
+;; (define-key (kbd "C-M-DEL") 'paredit-splice-sexp)
 
 (add-hook 'slime-repl-mode-hook 'hooks/for-lisp-modes)
 (add-hook 'lisp-mode-hook 'hooks/for-lisp-modes)

@@ -23,7 +23,7 @@
                        "\\.rake$"
                        "\\.cap$"
                        "\\.gemspec$"
-                       "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Chef\\)file"])
+                       "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Brew\\|Chef\\)file"])
 
 (mapcar (lambda (str)
    (add-to-list 'auto-mode-alist `(,str . enh-ruby-mode)))

@@ -1,5 +1,6 @@
 ;;; key bindings
 ;;
+;; http://www.nongnu.org/emacs-tiny-tools/keybindings/
 
 ;;;;
 ;; copy, paste and repeat
@@ -128,4 +129,3 @@
 
 (provide 'bindings)
 ;;; bindings.el eof
-
