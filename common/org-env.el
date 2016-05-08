@@ -14,7 +14,9 @@
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")
-        (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+        (sequence "PLAN(p)" "REVIEW(v)" "LOOK(l)" "|" "VIEWED(i)")
+        (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)" "WORKING(w)")
+        (sequence "APPROVE(a)" "|" "GOOD(g)")
         (sequence "|" "CANCELED(c)")))
 
 (provide 'org-env)

@@ -8,7 +8,7 @@
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
       system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
-      vendor-dir (concat dotfiles-dir "vendor")
+      ;; vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
       themes-dir (concat dotfiles-dir "themes")
       erlang-dir (or (getenv "ERLANG_PATH") "/usr/local/opt/erlang"))
@@ -27,16 +27,16 @@
 ;;
 
 (add-to-list 'load-path common-dir)
-(add-to-list 'load-path vendor-dir)
+;; (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path themes-dir)
 (add-to-list 'load-path erlang-tools)
-(add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
-(add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
-(add-to-list 'load-path (concat vendor-dir "/textmate.el"))
-(add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
-(add-to-list 'load-path (concat vendor-dir "/scala"))
-(add-to-list 'load-path (concat vendor-dir "/jade-mode"))
-(add-to-list 'load-path (concat vendor-dir "/nu-mode"))
+;; (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
+;; (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
+;; (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
+;; (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
+;; (add-to-list 'load-path (concat vendor-dir "/scala"))
+;; (add-to-list 'load-path (concat vendor-dir "/jade-mode"))
+;; (add-to-list 'load-path (concat vendor-dir "/nu-mode"))
 
 ;;;;
 ;; build exec-path
@@ -61,7 +61,7 @@
 (require 'uniquify)
 (require 'ansi-color)
 (require 'recentf)
-(require 'unbound)
+;;(require 'unbound)
 
 (require 'lisp-helpers)
 (require 'defuns)
@@ -185,6 +185,7 @@
  '(bg:erc-color-face5 ((t (:background "red"))))
  '(erc-input-face ((t (:foreground "color-250"))))
  '(erc-my-nick-face ((t (:foreground "color-33" :weight bold))))
+ '(highlight ((t (:background "#303030"))))
  '(mode-line ((t (:background "grey75" :foreground "black"))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
@@ -195,6 +196,7 @@
  '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "#ffd850"))))
  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "#ff8e50"))))
  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "#fb4f56"))))
+ '(region ((t (:background "#ff2222" :foreground "#ffffff"))))
  '(tool-bar ((t (:box (:line-width 1 :style released-button)))))
  '(trailing-whitespace ((t nil)))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))

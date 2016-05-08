@@ -1,15 +1,6 @@
-[submodule "vendor/cucumber.el"]
-    path = vendor/cucumber.el
-    url = git://github.com/michaelklishin/cucumber.el.git
 [submodule "vendor/textmate.el"]
     path = vendor/textmate.el
     url = git://github.com/defunkt/textmate.el
-[submodule "vendor/org-mode"]
-    path = vendor/org-mode
-    url = git://repo.or.cz/org-mode.git
-[submodule "vendor/rinari"]
-    path = vendor/rinari
-    url = git://github.com/eschulte/rinari.git
 [submodule "vendor/coffee-mode"]
     path = vendor/coffee-mode
     url = git://github.com/defunkt/coffee-mode.git

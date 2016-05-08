@@ -8,8 +8,8 @@
 ;;(load (concat dotfiles-dir "quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "/usr/local/bin/ccl64")
 
-(add-hook 'nu-mode-hook               (lambda () (enable-paredit-mode)))
-(add-hook 'clojure-mode               (lambda () (enable-paredit-mode)))
+(add-hook 'clojure-mode
+          (lambda () (enable-paredit-mode)))
 
 (eval-after-load "slime"
   '(progn

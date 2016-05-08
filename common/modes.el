@@ -2,16 +2,6 @@
 ;;
 
 ;;;;
-;; minor
-;;
-
-(require 'textmate)
-(require 'gist)
-(textmate-mode)
-
-;;(require 'nu)
-
-;;;;
 ;; major - autoloads
 ;;
 
@@ -148,8 +138,6 @@
 
 (setq ibuffer-saved-filter-groups
       '(("defaults"
-         ("cocoa" (filename . "\\Cocoa"))
-         ("conhar" (filename . "\\conhar"))
          ("conf" (or (filename . "\.emacs\.d")
                      (filename . "emacs-config")))
          ("org" (or (mode . org-mode)
