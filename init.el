@@ -8,7 +8,6 @@
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
       system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
-      ;; vendor-dir (concat dotfiles-dir "vendor")
       common-dir (concat dotfiles-dir "common")
       themes-dir (concat dotfiles-dir "themes")
       erlang-dir (or (getenv "ERLANG_PATH") "/usr/local/opt/erlang"))
@@ -27,16 +26,8 @@
 ;;
 
 (add-to-list 'load-path common-dir)
-;; (add-to-list 'load-path vendor-dir)
 (add-to-list 'load-path themes-dir)
 (add-to-list 'load-path erlang-tools)
-;; (add-to-list 'load-path (concat vendor-dir "/cucumber.el"))
-;; (add-to-list 'load-path (concat vendor-dir "/cucumber.el/cucumber.el"))
-;; (add-to-list 'load-path (concat vendor-dir "/textmate.el"))
-;; (add-to-list 'load-path (concat vendor-dir "/treetop-mode.el"))
-;; (add-to-list 'load-path (concat vendor-dir "/scala"))
-;; (add-to-list 'load-path (concat vendor-dir "/jade-mode"))
-;; (add-to-list 'load-path (concat vendor-dir "/nu-mode"))
 
 ;;;;
 ;; build exec-path
@@ -55,14 +46,6 @@
 ;; static loads
 ;;
 
-(require 'cl)
-(require 'saveplace)
-(require 'ffap)
-(require 'uniquify)
-(require 'ansi-color)
-(require 'recentf)
-;;(require 'unbound)
-
 (require 'lisp-helpers)
 (require 'defuns)
 (require 'bindings)
@@ -75,7 +58,19 @@
 
 (add-hook 'after-init-hook
           '(lambda ()
-             (require 'ruby-env)))
+             (require 'ruby-env)
+             ;; open a file or URL at point
+             ;;(require 'ffap)
+             ;; support an easier way of finding unbound keys
+             ;;(require 'unbound)
+             ;; save places in buffers between sessions
+             (require 'saveplace)
+             ;; override default format of unique buffer names
+             (require 'uniquify)
+             ;; transform ansi codes into faces
+             (require 'ansi-color)
+             ;; keep a list of recently opened files across sessions
+             (require 'recentf)))
 
 ;;;;
 ;; user/system specific
