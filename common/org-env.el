@@ -10,7 +10,8 @@
 
 (add-hook 'org-mode-hook
           '(lambda ()
-             (local-set-key (kbd "C-M-<return>") 'org-todo)))
+             (local-set-key (kbd "C-M-<return>") 'org-todo)
+             (setq org-hide-leading-stars t)))
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")
