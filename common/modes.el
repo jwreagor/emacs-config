@@ -183,9 +183,11 @@
 
 (add-hook 'after-init-hook
           '(lambda ()
-             (require 'yasnippet)
+             ;; (require 'yasnippet)
              ;; (yas-load-directory (concat dotfiles-dir "snippets"))
-             (yas-global-mode)))
+             (yas-global-mode)
+             (global-company-mode)
+             (editorconfig-mode)))
 
 ;;(hl-line-mode)
 
