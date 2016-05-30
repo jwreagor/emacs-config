@@ -27,7 +27,8 @@
 
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path themes-dir)
-(add-to-list 'load-path erlang-tools)
+(if (file-exists-p erlang-dir)
+    (add-to-list 'load-path erlang-tools))
 
 ;;;;
 ;; build exec-path
@@ -55,6 +56,7 @@
 (require 'scheme-env)
 (require 'org-env)
 (require 'js-env)
+(require 'rust-env)
 
 (add-hook 'after-init-hook
           '(lambda ()
@@ -93,6 +95,13 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
  '(blink-cursor-mode t)
+ '(cider-prompt-for-project-on-connect (quote when-needed))
+ '(cider-repl-history-file "~/.emacs.d/cider-history" t)
+ '(cider-repl-history-size 3000 t)
+ '(cider-repl-result-prefix ";; => " t)
+ '(cider-repl-use-pretty-printing t t)
+ '(cider-repl-wrap-history t t)
+ '(cider-show-error-buffer nil t)
  '(coffee-tab-width 2)
  '(column-number-mode t)
  '(dired-at-point-require-prefix nil)
@@ -153,7 +162,9 @@
  '(ns-control-modifier (quote control))
  '(ns-function-modifier (quote none))
  '(ns-use-qd-smoothing nil)
- '(rust-indent-offset 2)
+ '(org-priority-faces nil)
+ '(rust-format-on-save t)
+ '(rust-indent-offset 4)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(sh-indentation 2)
  '(show-paren-mode t)
@@ -182,6 +193,7 @@
  '(erc-my-nick-face ((t (:foreground "color-33" :weight bold))))
  '(highlight ((t (:background "#303030"))))
  '(mode-line ((t (:background "grey75" :foreground "black"))))
+ '(org-document-title ((t (:foreground "brightcyan" :background "black" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
  '(rainbow-delimiters-depth-3-face ((((background dark)) (:foreground "#458adc"))))
