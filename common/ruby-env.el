@@ -19,15 +19,19 @@
 (autoload 'inf-ruby "inf-ruby" "" t)
 (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
 
-(setq ruby-file-types ["\\.rb$"
-                       "\\.rake$"
-                       "\\.cap$"
-                       "\\.gemspec$"
-                       "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Brew\\|Chef\\)file"])
+;; (setq ruby-file-types ["\\.rb$"
+;;                        "\\.rake$"
+;;                        "\\.cap$"
+;;                        "\\.gemspec$"
+;;                        "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Brew\\|Chef\\)file"])
 
 (mapcar (lambda (str)
    (add-to-list 'auto-mode-alist `(,str . enh-ruby-mode)))
- ruby-file-types)
+        ["\\.rb$"
+         "\\.rake$"
+         "\\.cap$"
+         "\\.gemspec$"
+         "\\(Cap\\|Gem\\|Rake\\|Guard\\|Thor\\|Berks\\|Brew\\|Chef\\)file"])
 
 ;;;;
 ;; enh-ruby-mode & rspec-mode configuration and hooks
