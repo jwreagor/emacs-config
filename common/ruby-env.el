@@ -39,9 +39,10 @@
 
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
-(setq enh-ruby-program
-      (concat (file-name-as-directory
-               (car chruby-current-ruby-binary-path)) "ruby"))
+(if (stringp chruby-current-ruby-binary-path)
+    (setq enh-ruby-program
+          (concat (file-name-as-directory
+                   (car chruby-current-ruby-binary-path)) "ruby")))
 
 (add-hook 'enh-ruby-mode-hook
           '(lambda ()
