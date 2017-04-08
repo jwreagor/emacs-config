@@ -20,3 +20,5 @@ quicklisp/tmp
 quicklisp/cache
 tmp/
 cider-history
+ido.last
+recentf
