@@ -47,6 +47,7 @@
 (global-set-key (kbd "C-c C-f") #'cider-figwheel-repl)
 ;; (define-key (kbd "C-M-DEL") 'paredit-splice-sexp)
 
+;;(rainbow-delimiters-mode)
 (require 'lisp-helpers)
 
 (provide 'lisp-env)

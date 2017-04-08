@@ -66,6 +66,11 @@
 (add-hook 'sql-mode-hook 'sqlup-mode)
 
 ;;
+;; go-mode
+;;
+;; (add-hook 'go-mode-hook 'go-eldoc-setup)
+
+;;
 ;; ws-trim setup
 ;;
 (add-hook 'after-init-hook

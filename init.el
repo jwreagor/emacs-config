@@ -9,17 +9,10 @@
       system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
       common-dir (concat dotfiles-dir "common")
-      themes-dir (concat dotfiles-dir "themes")
-      erlang-dir (or (getenv "ERLANG_PATH") "/usr/local/opt/erlang"))
+      themes-dir (concat dotfiles-dir "themes"))
 
 (if (file-exists-p "/usr/local/bin")
     (setq local-bin "/usr/local/bin"))
-
-(if (file-exists-p erlang-dir)
-    (progn
-      (setq erlang-bin (concat erlang-dir "/bin"))
-      (setq erlang-tools (car (file-expand-wildcards
-                          (concat erlang-dir "/lib/erlang/lib/tools-*/emacs"))))))
 
 ;;;;
 ;; build load/exec-path
@@ -27,8 +20,6 @@
 
 (add-to-list 'load-path common-dir)
 (add-to-list 'load-path themes-dir)
-(if (file-exists-p erlang-dir)
-    (add-to-list 'load-path erlang-tools))
 
 ;;;;
 ;; build exec-path
@@ -50,7 +41,6 @@
 (require 'lisp-helpers)
 (require 'defuns)
 (require 'bindings)
-(require 'eshell-defaults)
 
 (require 'lisp-env)
 (require 'scheme-env)
@@ -60,11 +50,8 @@
 
 (add-hook 'after-init-hook
           '(lambda ()
+             (require 'helm-env)
              (require 'ruby-env)
-             ;; open a file or URL at point
-             ;;(require 'ffap)
-             ;; support an easier way of finding unbound keys
-             ;;(require 'unbound)
              ;; save places in buffers between sessions
              (require 'saveplace)
              ;; override default format of unique buffer names
@@ -142,6 +129,9 @@
  '(ffap-dired-wildcards "[*?][^/]*\\'")
  '(file-name-at-point-functions nil)
  '(fringe-mode 0 nil (fringe))
+ '(helm-autoresize-max-height 25)
+ '(helm-autoresize-mode t)
+ '(helm-mode t)
  '(ido-create-new-buffer (quote always))
  '(ido-enable-flex-matching t)
  '(ido-max-prospects 10)
@@ -191,8 +181,8 @@
  '(bg:erc-color-face5 ((t (:background "red"))))
  '(erc-input-face ((t (:foreground "color-250"))))
  '(erc-my-nick-face ((t (:foreground "color-33" :weight bold))))
- '(highlight ((t (:background "#303030"))))
- '(mode-line ((t (:background "grey75" :foreground "black"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#404040"))))
+ '(font-lock-comment-face ((t (:foreground "#404040"))))
  '(org-document-title ((t (:foreground "brightcyan" :background "black" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
@@ -203,7 +193,7 @@
  '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "#ffd850"))))
  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "#ff8e50"))))
  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "#fb4f56"))))
- '(region ((t (:background "#ff2222" :foreground "#ffffff"))))
+ '(region ((t (:background "#484848" :foreground "#eeeeee"))))
  '(tool-bar ((t (:box (:line-width 1 :style released-button)))))
  '(trailing-whitespace ((t nil)))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
