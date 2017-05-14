@@ -10,6 +10,10 @@
 (global-set-key (kbd "C-x p")   'helm-ag-project-root)
 (global-set-key (kbd "C-x h")   'helm-descbinds)
 
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+;; provides tab with default helm action
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action-1)
+;; fixes helm tab under terminal
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+
 
 (provide 'helm-env)
