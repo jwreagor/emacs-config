@@ -26,6 +26,7 @@
 
 (autoload 'js-mode "js" "" t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.json5?$" . js-mode))
 
 (add-to-list 'auto-mode-alist '("\\.m$" . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.h$" . objc-mode))
@@ -68,7 +69,12 @@
 ;;
 ;; go-mode
 ;;
-;; (add-hook 'go-mode-hook 'go-eldoc-setup)
+(setq gofmt-command "goimports")
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'go-mode-autoloads)
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (add-hook 'go-mode-hook 'go-eldoc-setup)))
 
 ;;
 ;; ws-trim setup
