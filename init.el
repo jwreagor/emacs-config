@@ -5,11 +5,6 @@
 ;; system locations
 ;;
 
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name))
@@ -160,6 +155,9 @@
  '(ns-function-modifier (quote none))
  '(ns-use-qd-smoothing nil)
  '(org-priority-faces nil)
+ '(package-selected-packages
+   (quote
+    (systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters racer projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest markdown-mode httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-snippets go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby cargo arduino-mode ag ack-and-a-half)))
  '(rust-format-on-save t)
  '(rust-indent-offset 4)
  '(safe-local-variable-values (quote ((encoding . utf-8))))

@@ -72,7 +72,9 @@
 (setq gofmt-command "goimports")
 (add-hook 'after-init-hook
           (lambda ()
-            (require 'go-mode-autoloads)
+            (require 'go-autocomplete)
+            (require 'auto-complete-config)
+            (ac-config-default)
             (add-hook 'before-save-hook 'gofmt-before-save)
             (add-hook 'go-mode-hook 'go-eldoc-setup)
             (add-hook 'go-mode-hook
