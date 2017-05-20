@@ -22,3 +22,4 @@ tmp/
 cider-history
 ido.last
 recentf
+*.elc
