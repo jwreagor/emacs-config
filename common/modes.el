@@ -74,7 +74,9 @@
           (lambda ()
             (require 'go-mode-autoloads)
             (add-hook 'before-save-hook 'gofmt-before-save)
-            (add-hook 'go-mode-hook 'go-eldoc-setup)))
+            (add-hook 'go-mode-hook 'go-eldoc-setup)
+            (add-hook 'go-mode-hook
+                      '(lambda () (linum-mode)))))
 
 ;;
 ;; ws-trim setup
