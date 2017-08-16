@@ -157,7 +157,7 @@
  '(org-priority-faces nil)
  '(package-selected-packages
    (quote
-    (systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters racer projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest markdown-mode httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-snippets go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby cargo arduino-mode ag ack-and-a-half)))
+    (go-guru markdown-mode protobuf-mode terraform-mode systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters racer projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-snippets go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby cargo arduino-mode ag ack-and-a-half)))
  '(rust-format-on-save t)
  '(rust-indent-offset 4)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
@@ -184,6 +184,19 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bg:erc-color-face5 ((t (:background "red"))))
+ '(diff-added ((t (:foreground "#5fd787"))))
+ '(diff-changed ((t (:foreground "#990000"))))
+ '(diff-context ((t (:inherit diff-mode :foreground "#666666"))))
+ '(diff-file-header ((t (:inherit diff-header :foreground "#ffffff"))))
+ '(diff-function ((t (:inherit diff-header :background "#000000" :foreground "#bbbbbb"))))
+ '(diff-header ((t (:background "#222222" :foreground "#cccccc"))))
+ '(diff-hunk-header ((t (:inherit diff-header :foreground "#ffffff"))))
+ '(diff-index ((t (:background "#999999" :foreground "#000000"))))
+ '(diff-indicator-added ((t (:inherit diff-added))))
+ '(diff-indicator-changed ((t (:inherit diff-changed))))
+ '(diff-indicator-removed ((t (:inherit diff-removed))))
+ '(diff-mode ((t nil)))
+ '(diff-removed ((t (:foreground "#ee0000"))))
  '(erc-input-face ((t (:foreground "color-250"))))
  '(erc-my-nick-face ((t (:foreground "color-33" :weight bold))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#404040"))))
