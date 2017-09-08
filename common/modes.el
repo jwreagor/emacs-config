@@ -196,13 +196,13 @@
 
 ;; (message (progn (modes/yasnippets-elpa-dirs)))
 
-(add-hook 'after-init-hook
-          '(lambda ()
-             ;; (require 'yasnippet)
-             ;; (yas-load-directory (concat dotfiles-dir "snippets"))
-             (yas-global-mode)
-             (global-company-mode)
-             (editorconfig-mode)))
+;; (add-hook 'after-init-hook
+;;           '(lambda ()
+;;              ;; (require 'yasnippet)
+;;              ;; (yas-load-directory (concat dotfiles-dir "snippets"))
+;;              (yas-global-mode)
+;;              (global-company-mode)
+;;              (editorconfig-mode)))
 
 ;;(hl-line-mode)
 
