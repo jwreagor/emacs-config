@@ -157,7 +157,7 @@
  '(org-priority-faces nil)
  '(package-selected-packages
    (quote
-    (go-guru markdown-mode protobuf-mode terraform-mode systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters racer projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-snippets go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby cargo arduino-mode ag ack-and-a-half)))
+    (go-stacktracer go-guru markdown-mode protobuf-mode terraform-mode systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters racer projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby cargo arduino-mode ag ack-and-a-half)))
  '(rust-format-on-save t)
  '(rust-indent-offset 4)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
@@ -202,6 +202,7 @@
  '(font-lock-comment-delimiter-face ((t (:foreground "#404040"))))
  '(font-lock-comment-face ((t (:foreground "#404040"))))
  '(linum ((t (:inherit (shadow default)))))
+ '(markdown-inline-code-face ((t (:inherit markdown-pre-face font-lock-constant-face nil))))
  '(org-document-title ((t (:foreground "brightcyan" :background "black" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
