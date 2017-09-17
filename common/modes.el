@@ -51,8 +51,11 @@
 (add-to-list 'auto-mode-alist '("\\.coffee\..*$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
-(autoload 'cheat "cheat" "" t)
+;;(autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
+
+(autoload 'makefile-mode "makefile-mode")
+(add-to-list 'auto-mode-alist '("Makefile\.?.*$" . makefile-mode))
 
 (autoload 'treetop-mode "treetop-mode")
 (add-to-list 'auto-mode-alist '("\\.tt$" . treetop-mode))
