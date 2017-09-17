@@ -168,6 +168,7 @@
  '(standard-indent 2)
  '(tab-always-indent (quote always))
  '(tab-width 4)
+ '(terraform-indent-level 4)
  '(truncate-lines nil)
  '(truncate-partial-width-windows nil)
  '(visible-cursor t)
