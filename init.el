@@ -131,6 +131,7 @@
  '(ffap-dired-wildcards "[*?][^/]*\\'")
  '(file-name-at-point-functions nil)
  '(fringe-mode 0 nil (fringe))
+ '(godef-command "godef")
  '(helm-autoresize-max-height 20)
  '(helm-autoresize-mode t)
  '(helm-mode t)
@@ -157,11 +158,11 @@
  '(org-priority-faces nil)
  '(package-selected-packages
    (quote
-    (go-stacktracer go-guru markdown-mode protobuf-mode terraform-mode systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters racer projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby cargo arduino-mode ag ack-and-a-half)))
+    (go-errcheck go-imports go-mode go-scratch s racer cargo dash rust-playground go-stacktracer go-guru markdown-mode protobuf-mode terraform-mode systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby arduino-mode ag ack-and-a-half)))
  '(rust-format-on-save t)
  '(rust-indent-offset 4)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
- '(sh-indentation 2)
+ '(sh-indentation 4)
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(speedbar-vc-do-check nil)

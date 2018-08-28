@@ -81,7 +81,9 @@
             (add-hook 'before-save-hook 'gofmt-before-save)
             (add-hook 'go-mode-hook 'go-eldoc-setup)
             (add-hook 'go-mode-hook
-                      '(lambda () (linum-mode)))))
+                      '(lambda ()
+                         (linum-mode)
+                         (define-key go-mode-map (kbd "C-c C-j") 'go-guru-definition)))))
 
 ;;
 ;; ws-trim setup
@@ -105,7 +107,7 @@
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
 
-;;;;
+;;
 ;; coffee-script
 ;;
 
@@ -113,7 +115,7 @@
           '(lambda ()
              (set (make-local-variable 'tab-width) 2)))
 
-;;;;
+;;
 ;; markdown
 ;;
 
@@ -128,17 +130,17 @@
                                         (shell-quote-argument (buffer-file-name)))))
          (global-set-key "\C-cm" 'markdown-preview-file)))
 
-;;;;
+;;
 ;; fucking batch files
 ;;
 
 (add-hook 'sh-mode-hook
           (lambda ()
             (interactive)
-            (setq sh-basic-offset 2
-                  sh-indentation 2)))
+            (setq sh-basic-offset 4
+                  sh-indentation 4)))
 
-;;;;
+;;
 ;; ack-and-a-half
 ;;
 (defalias 'ack                'ack-and-a-half)
@@ -146,7 +148,7 @@
 (defalias 'ack-find-file      'ack-and-a-half-find-file)
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
-;;;;
+;;
 ;; ibuffer
 ;;
 
