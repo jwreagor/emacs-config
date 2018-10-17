@@ -36,6 +36,10 @@
 (if (boundp 'erlang-bin)
     (add-to-list 'exec-path erlang-bin))
 
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
+
 ;;;;
 ;; static loads
 ;;
@@ -131,6 +135,7 @@
  '(ffap-dired-wildcards "[*?][^/]*\\'")
  '(file-name-at-point-functions nil)
  '(fringe-mode 0 nil (fringe))
+ '(go-eldoc-gocode-args nil)
  '(godef-command "godef")
  '(helm-autoresize-max-height 20)
  '(helm-autoresize-mode t)
@@ -158,10 +163,11 @@
  '(org-priority-faces nil)
  '(package-selected-packages
    (quote
-    (go-errcheck go-imports go-mode go-scratch s racer cargo dash rust-playground go-stacktracer go-guru markdown-mode protobuf-mode terraform-mode systemd go-autocomplete go-playground yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-go-package helm-descbinds helm-ag handlebars-mode haml-mode go-eldoc es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby arduino-mode ag ack-and-a-half)))
+    (company-go popup-complete auto-complete exec-path-from-shell go-errcheck go-imports go-scratch racer cargo rust-playground go-stacktracer markdown-mode protobuf-mode terraform-mode systemd yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-descbinds helm-ag handlebars-mode haml-mode es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-yasnippets elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby arduino-mode ag ack-and-a-half)))
  '(rust-format-on-save t)
  '(rust-indent-offset 4)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
+ '(sh-basic-offset 4)
  '(sh-indentation 4)
  '(show-paren-mode t)
  '(size-indication-mode t)
@@ -205,6 +211,7 @@
  '(font-lock-comment-face ((t (:foreground "#404040"))))
  '(linum ((t (:inherit (shadow default)))))
  '(markdown-inline-code-face ((t (:inherit markdown-pre-face font-lock-constant-face nil))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "grey40" :foreground "grey20" :box (:line-width -1 :color "grey40") :weight light))))
  '(org-document-title ((t (:foreground "brightcyan" :background "black" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "#a145dc"))))
  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "#5445dc"))))
@@ -219,6 +226,7 @@
  '(tool-bar ((t (:box (:line-width 1 :style released-button)))))
  '(trailing-whitespace ((t nil)))
  '(twitter-time-stamp-face ((t (:background "lightBlue" :foreground "Black" :slant italic))))
- '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold)))))
+ '(twitter-user-name-face ((t (:background "lightBlue" :foreground "black" :weight bold))))
+ '(vertical-border ((t (:foreground "gray25")))))
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

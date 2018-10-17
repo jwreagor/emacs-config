@@ -69,21 +69,40 @@
 
 (add-hook 'sql-mode-hook 'sqlup-mode)
 
+;; (add-hook 'after-init-hook
+;;           (lambda ()
+;;             (require 'auto-complete-config)
+;;             (ac-config-default)
+;;             (add-to-list 'ac-modes 'go-mode)))
+
 ;;
 ;; go-mode
 ;;
-(setq gofmt-command "goimports")
 (add-hook 'after-init-hook
           (lambda ()
-            (require 'go-autocomplete)
-            (require 'auto-complete-config)
-            (ac-config-default)
+            (require 'company)
+            (require 'company-go)
+
+            (setq company-tooltip-limit 20)
+            (setq company-idle-delay .3)
+            (setq company-echo-delay 0)
+            (setq company-begin-commands '(self-insert-command))))
+
+            (setq gofmt-command "goimports")
+(add-hook 'after-init-hook
+          (lambda ()
+            ;; (require 'go-autocomplete)
             (add-hook 'before-save-hook 'gofmt-before-save)
             (add-hook 'go-mode-hook 'go-eldoc-setup)
             (add-hook 'go-mode-hook
                       '(lambda ()
+                         (set (make-local-variable 'company-backends) '(company-go))
+                         (company-mode)
+
+                         ;; (require go-autocomplete)
                          (linum-mode)
-                         (define-key go-mode-map (kbd "C-c C-j") 'go-guru-definition)))))
+                         (define-key go-mode-map (kbd "C-c C-j") 'go-guru-definition)
+                         (define-key go-mode-map (kbd "M-RET") 'go-playground-exec)))))
 
 ;;
 ;; ws-trim setup
@@ -121,14 +140,13 @@
 
 (setq markdown-mode-hook
       '(lambda ()
-         ;; (setq markdown-command "kramdown --enable-coderay %s")
-         ;; (setq markdown-command-needs-filename t)
          (defun markdown-preview-file ()
-           "run Marked on the current file and revert the buffer"
+           "open the current buffer in Marked 2"
            (interactive)
-           (async-shell-command (format "open -a \"/Applications/Marked\  2.app\" \"%s\""
-                                        (shell-quote-argument (buffer-file-name)))))
-         (global-set-key "\C-cm" 'markdown-preview-file)))
+           (start-process-shell-command "markdown-preview-file" nil
+                                        (format "open -a \"/Applications/Marked\  2.app\" \"%s\""
+                                                (shell-quote-argument (buffer-file-name)))))
+         (global-set-key "\C-c m" 'markdown-preview-file)))
 
 ;;
 ;; fucking batch files
