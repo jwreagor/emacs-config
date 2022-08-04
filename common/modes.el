@@ -78,6 +78,7 @@
 ;;
 ;; go-mode
 ;;
+
 (add-hook 'after-init-hook
           (lambda ()
             (require 'company)
@@ -89,6 +90,7 @@
             (setq company-begin-commands '(self-insert-command))))
 
             (setq gofmt-command "goimports")
+
 (add-hook 'after-init-hook
           (lambda ()
             ;; (require 'go-autocomplete)
@@ -116,6 +118,7 @@
 ;;
 ;; cosmetics for diffs and magit
 ;;
+
 (eval-after-load 'diff-mode
   '(progn
      (set-face-foreground 'diff-added "green4")
@@ -133,6 +136,29 @@
 (add-hook 'coffee-mode-hook
           '(lambda ()
              (set (make-local-variable 'tab-width) 2)))
+
+;;
+;; python
+;;
+(add-hook 'after-init-hook
+          '(lambda ()
+             ;; (setq elpy-rpc-virtualenv-path "/usr/local/bin/pyvenv")
+             ;;(elpy-enable)
+             (require 'virtualenvwrapper)
+             (venv-initialize-interactive-shells) ;; if you want interactive shell support
+             (venv-initialize-eshell) ;; if you want eshell support
+             ;; note that setting `venv-location` is not necessary if you
+             ;; use the default location (`~/.virtualenvs`), or if the
+             ;; the environment variable `WORKON_HOME` points to the right place
+             ;; (setq venv-location "~/.virtualenvs")
+             ))
+
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (linum-mode)
+             (company-mode)
+             (define-key python-mode-map (kbd "C-c C-c") 'comment-region)
+             (define-key python-mode-map (kbd "C-c C-v") 'uncomment-region)))
 
 ;;
 ;; markdown
@@ -155,12 +181,14 @@
 (add-hook 'sh-mode-hook
           (lambda ()
             (interactive)
+            (define-key sh-mode-map (kbd "C-c C-c") 'comment-region)
             (setq sh-basic-offset 4
                   sh-indentation 4)))
 
 ;;
 ;; ack-and-a-half
 ;;
+
 (defalias 'ack                'ack-and-a-half)
 (defalias 'ack-same           'ack-and-a-half-same)
 (defalias 'ack-find-file      'ack-and-a-half-find-file)
@@ -195,29 +223,6 @@
              (setq ibuffer-expert 1)
              (setq ibuffer-show-empty-filter-groups nil)
              (ibuffer-switch-to-saved-filter-groups "defaults")))
-
-;;;;
-;; yasnippet
-;;
-
-;; "find or create snippets directory for currently loaded yassnipets under elpa, call with yas-load-directory"
-
-;; "Find most recent yasnippet directory"
-
-;; "Generate list of all yasnippet dirs"
-
-;; "Iterate each and find most recent"
-
-;; (defun modes/yasnippets-elpa-dirs ()
-;;   (let ((yas-elpa-wildcard
-;;          (concat (locate-user-emacs-file "elpa") "/yasnippet-20*")))
-;;     (car (prune-directory-list
-;;           (file-expand-wildcards yas-elpa-wildcard)))))
-
-;; (defun modes/yasnippets-elpa-recent (yas-elpa-dirs)
-;;   (let*))
-
-;; (message (progn (modes/yasnippets-elpa-dirs)))
 
 ;; (add-hook 'after-init-hook
 ;;           '(lambda ()
