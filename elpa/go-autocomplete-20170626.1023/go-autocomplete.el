@@ -5,6 +5,7 @@
 ;; Author: Mikhail <tensai@cirno.in> Kuryshev
 ;; Keywords: languages
 ;; Package-Version: 20170626.1023
+;; Package-Commit: 5327738ec1be51061a3f31010c89bdd4924ca496
 ;; Package-Requires: ((auto-complete "1.4.0"))
 
 ;; This program is free software; you can redistribute it and/or modify

@@ -1,9 +1,16 @@
-;;; go-autocomplete-autoloads.el --- automatically extracted autoloads
+;;; go-autocomplete-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
-(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
+
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil nil ("go-autocomplete.el") (23428 29925 0 0))
+;;;### (autoloads nil "go-autocomplete" "go-autocomplete.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from go-autocomplete.el
+
+(register-definition-prefixes "go-autocomplete" '("ac-"))
 
 ;;;***
 
@@ -11,5 +18,6 @@
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
+;; coding: utf-8
 ;; End:
 ;;; go-autocomplete-autoloads.el ends here

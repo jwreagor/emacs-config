@@ -19,7 +19,7 @@
       inhibit-startup-message t
       transient-mark-mode t
       color-theme-is-global t
-      save-place t
+      save-place-mode t
       imenu-auto-rescan t
       truncate-partial-width-windows nil
       uniquify-buffer-name-style 'forward

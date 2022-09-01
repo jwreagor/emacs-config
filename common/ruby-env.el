@@ -45,19 +45,19 @@
                    (car chruby-current-ruby-binary-path)) "ruby")))
 
 (add-hook 'enh-ruby-mode-hook
-          '(lambda ()
-            (require 'ruby-compilation)
-            (ruby-electric-mode t)
-            (inf-ruby-minor-mode)
-            (local-set-key (kbd "C-c h r") 'ri)
-            (local-set-key (kbd "TAB") nil)))
+          #'(lambda ()
+              (require 'ruby-compilation)
+              (ruby-electric-mode t)
+              (inf-ruby-minor-mode)
+              (local-set-key (kbd "C-c h r") 'ri)
+              (local-set-key (kbd "TAB") nil)))
 
 
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
 (add-hook 'enh-ruby-mode-hook 'minitest-mode)
 (add-hook 'rspec-mode-hook
-          '(lambda ()
-             (setq yas-extra-modes 'rspec-mode)))
+          #'(lambda ()
+              (setq yas-extra-modes 'rspec-mode)))
 
 ;;;;
 ;; never edit compiled rubinius bytecode

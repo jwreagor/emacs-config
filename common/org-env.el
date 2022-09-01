@@ -4,14 +4,14 @@
 ;; binding replacements
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-(global-set-key "\C-cl" 'org-store-link)
+;; (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
 (add-hook 'org-mode-hook
-          '(lambda ()
-             (local-set-key (kbd "C-M-<return>") 'org-todo)
-             (setq org-hide-leading-stars t)))
+          #'(lambda ()
+              (local-set-key (kbd "C-M-<return>") 'org-todo)
+              (setq org-hide-leading-stars t)))
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")

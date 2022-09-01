@@ -69,51 +69,59 @@
 
 (add-hook 'sql-mode-hook 'sqlup-mode)
 
-;; (add-hook 'after-init-hook
-;;           (lambda ()
-;;             (require 'auto-complete-config)
-;;             (ac-config-default)
-;;             (add-to-list 'ac-modes 'go-mode)))
-
 ;;
 ;; go-mode
 ;;
 
 (add-hook 'after-init-hook
-          (lambda ()
-            (require 'company)
-            (require 'company-go)
+          #'(lambda ()
+              (require 'company)
+              (require 'company-go)
+              (require 'lsp-mode)
 
-            (setq company-tooltip-limit 20)
-            (setq company-idle-delay .3)
-            (setq company-echo-delay 0)
-            (setq company-begin-commands '(self-insert-command))))
+              (setq company-tooltip-limit 20)
+              (setq company-idle-delay .3)
+              (setq company-echo-delay 0)
+              (setq company-begin-commands '(self-insert-command))
+              (setq lsp-enable-snippet 'f)
+              ;; (setq gofmt-command "goimports")
 
-            (setq gofmt-command "goimports")
+              ))
 
 (add-hook 'after-init-hook
-          (lambda ()
-            ;; (require 'go-autocomplete)
-            (add-hook 'before-save-hook 'gofmt-before-save)
-            (add-hook 'go-mode-hook 'go-eldoc-setup)
-            (add-hook 'go-mode-hook
-                      '(lambda ()
-                         (set (make-local-variable 'company-backends) '(company-go))
-                         (company-mode)
+          #'(lambda ()
+              (add-hook 'before-save-hook 'gofmt-before-save)
+              (add-hook 'go-mode-hook 'go-eldoc-setup)
+              ;; (add-hook 'go-mode-hook #'lsp)
+              (add-hook 'go-mode-hook
+                        #'(lambda ()
+                            (set (make-local-variable 'company-backends) '(company-go))
+                            (company-mode)
+                            (linum-mode)
 
-                         ;; (require go-autocomplete)
-                         (linum-mode)
-                         (define-key go-mode-map (kbd "C-c C-j") 'go-guru-definition)
-                         (define-key go-mode-map (kbd "M-RET") 'go-playground-exec)))))
+                            ;; (require go-autocomplete)
+
+                            (setq lsp-keymap-prefix "C-c l")
+                            (setq lsp-headerline-breadcrumb-enable nil)
+                            (setq lsp-diagnostics-provider :none)
+
+                            (lsp)
+
+                            (lsp-enable-which-key-integration t)
+
+                            ;; (define-key go-mode-map (kbd "C-c C-j") 'go-guru-definition)
+                            ;; (define-key go-mode-map (kbd "M-RET") 'go-playground-exec)
+
+                            ))))
 
 ;;
 ;; ws-trim setup
 ;;
 (add-hook 'after-init-hook
-          (lambda ()
-            (global-ws-trim-mode t)
-            (set-default 'ws-trim-level 2)
-            (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
+          #'(lambda ()
+              (global-ws-trim-mode t)
+              (set-default 'ws-trim-level 2)
+              (setq ws-trim-global-modes '(guess (not message-mode eshell-mode)))))
 
 ;;
 ;; cosmetics for diffs and magit
@@ -134,56 +142,56 @@
 ;;
 
 (add-hook 'coffee-mode-hook
-          '(lambda ()
-             (set (make-local-variable 'tab-width) 2)))
+          #'(lambda ()
+              (set (make-local-variable 'tab-width) 2)))
 
 ;;
 ;; python
 ;;
 (add-hook 'after-init-hook
-          '(lambda ()
-             ;; (setq elpy-rpc-virtualenv-path "/usr/local/bin/pyvenv")
-             ;;(elpy-enable)
-             (require 'virtualenvwrapper)
-             (venv-initialize-interactive-shells) ;; if you want interactive shell support
-             (venv-initialize-eshell) ;; if you want eshell support
-             ;; note that setting `venv-location` is not necessary if you
-             ;; use the default location (`~/.virtualenvs`), or if the
-             ;; the environment variable `WORKON_HOME` points to the right place
-             ;; (setq venv-location "~/.virtualenvs")
-             ))
+          #'(lambda ()
+              ;; (setq elpy-rpc-virtualenv-path "/usr/local/bin/pyvenv")
+              ;;(elpy-enable)
+              (require 'virtualenvwrapper)
+              (venv-initialize-interactive-shells) ;; if you want interactive shell support
+              (venv-initialize-eshell) ;; if you want eshell support
+              ;; note that setting `venv-location` is not necessary if you
+              ;; use the default location (`~/.virtualenvs`), or if the
+              ;; the environment variable `WORKON_HOME` points to the right place
+              ;; (setq venv-location "~/.virtualenvs")
+              ))
 
 (add-hook 'python-mode-hook
-          '(lambda ()
-             (linum-mode)
-             (company-mode)
-             (define-key python-mode-map (kbd "C-c C-c") 'comment-region)
-             (define-key python-mode-map (kbd "C-c C-v") 'uncomment-region)))
+          #'(lambda ()
+              (linum-mode)
+              (company-mode)
+              (define-key python-mode-map (kbd "C-c C-c") 'comment-region)
+              (define-key python-mode-map (kbd "C-c C-v") 'uncomment-region)))
 
 ;;
 ;; markdown
 ;;
 
 (setq markdown-mode-hook
-      '(lambda ()
-         (defun markdown-preview-file ()
-           "open the current buffer in Marked 2"
-           (interactive)
-           (start-process-shell-command "markdown-preview-file" nil
-                                        (format "open -a \"/Applications/Marked\  2.app\" \"%s\""
-                                                (shell-quote-argument (buffer-file-name)))))
-         (global-set-key "\C-c m" 'markdown-preview-file)))
+      #'(lambda ()
+          (defun markdown-preview-file ()
+            "open the current buffer in Marked 2"
+            (interactive)
+            (start-process-shell-command "markdown-preview-file" nil
+                                         (format "open -a \"/Applications/Marked\  2.app\" \"%s\""
+                                                 (shell-quote-argument (buffer-file-name)))))
+          (global-set-key "\C-c m" 'markdown-preview-file)))
 
 ;;
 ;; fucking batch files
 ;;
 
 (add-hook 'sh-mode-hook
-          (lambda ()
-            (interactive)
-            (define-key sh-mode-map (kbd "C-c C-c") 'comment-region)
-            (setq sh-basic-offset 4
-                  sh-indentation 4)))
+          #'(lambda ()
+              (interactive)
+              (define-key sh-mode-map (kbd "C-c C-c") 'comment-region)
+              (setq sh-basic-offset 4
+                    sh-indentation 4)))
 
 ;;
 ;; ack-and-a-half
@@ -218,14 +226,14 @@
              (name . "\*info\*"))))))
 
 (add-hook 'ibuffer-mode-hook
-          '(lambda ()
-             (ibuffer-auto-mode 1)
-             (setq ibuffer-expert 1)
-             (setq ibuffer-show-empty-filter-groups nil)
-             (ibuffer-switch-to-saved-filter-groups "defaults")))
+          #'(lambda ()
+              (ibuffer-auto-mode 1)
+              (setq ibuffer-expert 1)
+              (setq ibuffer-show-empty-filter-groups nil)
+              (ibuffer-switch-to-saved-filter-groups "defaults")))
 
 ;; (add-hook 'after-init-hook
-;;           '(lambda ()
+;;           #'(lambda ()
 ;;              ;; (require 'yasnippet)
 ;;              ;; (yas-load-directory (concat dotfiles-dir "snippets"))
 ;;              (yas-global-mode)

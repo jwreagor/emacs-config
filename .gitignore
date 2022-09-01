@@ -24,3 +24,4 @@ ido.last
 recentf
 *.elc
 ac-comphist.dat
+.lsp-session-v1

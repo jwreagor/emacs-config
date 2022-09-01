@@ -55,17 +55,17 @@
 (require 'rust-env)
 
 (add-hook 'after-init-hook
-          '(lambda ()
-             (require 'helm-env)
-             (require 'ruby-env)
-             ;; save places in buffers between sessions
-             (require 'saveplace)
-             ;; override default format of unique buffer names
-             (require 'uniquify)
-             ;; transform ansi codes into faces
-             (require 'ansi-color)
-             ;; keep a list of recently opened files across sessions
-             (require 'recentf)))
+          #'(lambda ()
+              (require 'helm-env)
+              (require 'ruby-env)
+              ;; save places in buffers between sessions
+              (require 'saveplace)
+              ;; override default format of unique buffer names
+              (require 'uniquify)
+              ;; transform ansi codes into faces
+              (require 'ansi-color)
+              ;; keep a list of recently opened files across sessions
+              (require 'recentf)))
 
 ;;;;
 ;; user/system specific
@@ -161,7 +161,7 @@
  '(ns-use-qd-smoothing nil)
  '(org-priority-faces nil)
  '(package-selected-packages
-   '(virtualenvwrapper elpy sqlup-mode company-go popup-complete auto-complete exec-path-from-shell go-errcheck go-imports go-scratch racer cargo rust-playground go-stacktracer markdown-mode protobuf-mode terraform-mode systemd yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode rainbow-delimiters projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-descbinds helm-ag handlebars-mode haml-mode es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby arduino-mode ag ack-and-a-half))
+   '(go-eldoc go-autocomplete cl-lib helm-lsp lsp-mode go-playground virtualenvwrapper elpy sqlup-mode company-go popup-complete auto-complete exec-path-from-shell go-errcheck go-imports go-scratch racer cargo rust-playground go-stacktracer markdown-mode protobuf-mode terraform-mode systemd yard-mode yaml-mode ws-trim toml-mode toml rustfmt ruby-electric ruby-compilation restclient-helm rainbow-mode projectile-direnv paredit osx-location osx-browse org-projectile nix-mode nginx-mode minitest httprepl helm-projectile helm-proc helm-package helm-descbinds helm-ag handlebars-mode haml-mode es-mode eredis erc-terminal-notifier erc-hl-nicks enh-ruby-mode elixir-mode elixir-mix editorconfig dockerfile-mode company-racer color-theme-solarized color-theme-monokai color-theme-molokai coffee-mode cider chruby arduino-mode ag ack-and-a-half))
  '(rust-format-on-save t)
  '(rust-indent-offset 4)
  '(safe-local-variable-values '((encoding . utf-8)))
