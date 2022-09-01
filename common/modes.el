@@ -84,8 +84,11 @@
               (setq company-echo-delay 0)
               (setq company-begin-commands '(self-insert-command))
               (setq lsp-enable-snippet 'f)
-              ;; (setq gofmt-command "goimports")
 
+              (setq gofmt-command "goimports")
+              (add-hook 'go-mode-hook
+                        (lambda ()
+                          (add-hook 'after-save-hook 'gofmt nil 'make-it-local)))
               ))
 
 (add-hook 'after-init-hook
