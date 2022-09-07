@@ -77,29 +77,22 @@
           #'(lambda ()
               (require 'company)
               (require 'company-go)
-              ;; (require 'lsp-mode)
 
               (setq company-tooltip-limit 20)
               (setq company-idle-delay .3)
               (setq company-echo-delay 0)
-              (setq company-begin-commands '(self-insert-command))
-
-              ;; (setq lsp-enable-snippet 'f)
-              ;; (setq lsp-enable-file-watchers nil)
-
-              ))
-
-;; (defun lsp-go-install-save-hooks ()
-;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
-;;   (add-hook 'before-save-hook #'lsp-organize-imports t t))
+              (setq company-begin-commands '(self-insert-command))))
 
 (add-hook 'after-init-hook
           #'(lambda ()
               (add-hook 'before-save-hook 'gofmt-before-save)
               (add-hook 'go-mode-hook 'go-eldoc-setup)
+              (add-hook 'go-mode-hook 'eglot-ensure)
 
-              ;; (add-hook 'go-mode-hook #'lsp-deferred)
-              ;; (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+              (setq gofmt-command "goimports")
+              (add-hook 'go-mode-hook
+                        (lambda ()
+                          (add-hook 'after-save-hook 'gofmt nil 'make-it-local)))
 
               (add-hook 'go-mode-hook
                         #'(lambda ()
@@ -107,61 +100,8 @@
                             (company-mode)
                             (linum-mode)
 
-                            ;; (require go-autocomplete)
-
-                            (setq lsp-keymap-prefix "C-c l")
-
-                            ;; ;; 1
-                            ;; (setq lsp-enable-symbol-highlighting nil)
-
-                            ;; ;; 2
-                            ;; (setq lsp-ui-doc-enable nil)
-
-                            ;; ;; 3
-                            ;; (setq lsp-lens-enable nil)
-
-                            ;; ;; 4
-                            ;; (setq lsp-headerline-breadcrumb-enable nil)
-
-                            ;; ;; 5 + 6
-                            ;; (setq lsp-ui-sideline-enable nil)
-                            ;; (setq lsp-ui-sideline-show-hover nil)
-
-                            ;; ;; 7
-                            ;; (setq lsp-modeline-code-actions-enable nil)
-
-                            ;; ;; 8
-                            ;; (setq lsp-diagnostics-provider :none)
-
-                            ;; ;; 9
-                            ;; (setq lsp-ui-sideline-show-diagnostics nil)
-
-                            ;; ;; 10
-                            ;; (setq lsp-eldoc-enable-hover nil)
-
-                            ;; ;; 11
-                            ;; (setq lsp-modeline-diagnostics-enable nil)
-
-                            ;; ;; 12
-                            ;; (setq lsp-signature-auto-activate nil)
-
-                            ;; ;; 13
-                            ;; (setq lsp-signature-render-documentation nil)
-
-                            ;; ;; 14
-                            ;; (setq lsp-completion-provider :none)
-
-                            ;; ;; 15
-                            ;; (setq lsp-completion-show-kind nil)
-
-                            ;; (lsp)
-
-                            ;; (lsp-enable-which-key-integration t)
-
-                            ;; (define-key go-mode-map (kbd "C-c C-j") 'lsp-goto-implementation)
-                            (define-key go-mode-map (kbd "M-RET") 'go-playground-exec)
-
-                            ))))
+                            (define-key go-mode-map (kbd "C-c C-j") 'xref-find-definitions)
+                            (define-key go-mode-map (kbd "M-RET") 'go-playground-exec)))))
 
 ;;
 ;; ws-trim setup
