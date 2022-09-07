@@ -47,10 +47,6 @@
 (autoload 'handlebars-mode "handlebars-mode")
 (add-to-list 'auto-mode-alist '("\\.(hbs|handlebars)$" . handlebars-mode))
 
-(autoload 'coffee-mode "coffee-mode")
-(add-to-list 'auto-mode-alist '("\\.coffee\..*$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
-
 ;;(autoload 'cheat "cheat" "" t)
 (autoload 'lisppaste-paste-region "lisppaste" "" t)
 
@@ -127,14 +123,6 @@
      (set-face-foreground 'magit-diff-del "red3")))
 
 ;;
-;; coffee-script
-;;
-
-(add-hook 'coffee-mode-hook
-          #'(lambda ()
-              (set (make-local-variable 'tab-width) 2)))
-
-;;
 ;; python
 ;;
 (add-hook 'after-init-hook
@@ -156,20 +144,6 @@
               (company-mode)
               (define-key python-mode-map (kbd "C-c C-c") 'comment-region)
               (define-key python-mode-map (kbd "C-c C-v") 'uncomment-region)))
-
-;;
-;; markdown
-;;
-
-(setq markdown-mode-hook
-      #'(lambda ()
-          (defun markdown-preview-file ()
-            "open the current buffer in Marked 2"
-            (interactive)
-            (start-process-shell-command "markdown-preview-file" nil
-                                         (format "open -a \"/Applications/Marked\  2.app\" \"%s\""
-                                                 (shell-quote-argument (buffer-file-name)))))
-          (global-set-key "\C-c m" 'markdown-preview-file)))
 
 ;;
 ;; fucking batch files
@@ -220,16 +194,6 @@
               (setq ibuffer-expert 1)
               (setq ibuffer-show-empty-filter-groups nil)
               (ibuffer-switch-to-saved-filter-groups "defaults")))
-
-;; (add-hook 'after-init-hook
-;;           #'(lambda ()
-;;              ;; (require 'yasnippet)
-;;              ;; (yas-load-directory (concat dotfiles-dir "snippets"))
-;;              (yas-global-mode)
-;;              (global-company-mode)
-;;              (editorconfig-mode)))
-
-;;(hl-line-mode)
 
 (provide 'modes)
 ;;; modes.el eof
